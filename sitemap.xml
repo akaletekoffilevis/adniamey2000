@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- French -->
+  <url><loc>https://adniamey2000.org/</loc><priority>1.0</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://adniamey2000.org/fr/</loc><priority>0.9</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://adniamey2000.org/fr/a-propos</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://adniamey2000.org/fr/pasteurs</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://adniamey2000.org/fr/sermons</loc><priority>0.7</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://adniamey2000.org/fr/evenements</loc><priority>0.7</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://adniamey2000.org/fr/galerie</loc><priority>0.6</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://adniamey2000.org/fr/blog</loc><priority>0.8</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://adniamey2000.org/fr/contact</loc><priority>0.6</priority><changefreq>monthly</changefreq></url>
+  <!-- English -->
+  <url><loc>https://adniamey2000.org/en/</loc><priority>0.9</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://adniamey2000.org/en/a-propos</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://adniamey2000.org/en/pasteurs</loc><priority>0.6</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://adniamey2000.org/en/sermons</loc><priority>0.6</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://adniamey2000.org/en/evenements</loc><priority>0.6</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://adniamey2000.org/en/galerie</loc><priority>0.5</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://adniamey2000.org/en/blog</loc><priority>0.7</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://adniamey2000.org/en/contact</loc><priority>0.5</priority><changefreq>monthly</changefreq></url>
+  <!-- Hausa -->
+  <url><loc>https://adniamey2000.org/ha/</loc><priority>0.9</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://adniamey2000.org/ha/a-propos</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://adniamey2000.org/ha/pasteurs</loc><priority>0.6</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://adniamey2000.org/ha/sermons</loc><priority>0.6</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://adniamey2000.org/ha/evenements</loc><priority>0.6</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://adniamey2000.org/ha/galerie</loc><priority>0.5</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://adniamey2000.org/ha/blog</loc><priority>0.7</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://adniamey2000.org/ha/contact</loc><priority>0.5</priority><changefreq>monthly</changefreq></url>
+</urlset>
