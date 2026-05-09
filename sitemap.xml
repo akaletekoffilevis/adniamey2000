@@ -9,6 +9,7 @@
   <url><loc>https://adniamey2000.org/fr/evenements</loc><priority>0.7</priority><changefreq>weekly</changefreq></url>
   <url><loc>https://adniamey2000.org/fr/galerie</loc><priority>0.6</priority><changefreq>monthly</changefreq></url>
   <url><loc>https://adniamey2000.org/fr/blog</loc><priority>0.8</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://adniamey2000.org/fr/article</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
   <url><loc>https://adniamey2000.org/fr/contact</loc><priority>0.6</priority><changefreq>monthly</changefreq></url>
   <url><loc>https://adniamey2000.org/mentions-legales</loc><priority>0.4</priority><changefreq>yearly</changefreq></url>
   <url><loc>https://adniamey2000.org/politique-confidentialite</loc><priority>0.4</priority><changefreq>yearly</changefreq></url>
@@ -20,6 +21,7 @@
   <url><loc>https://adniamey2000.org/en/evenements</loc><priority>0.6</priority><changefreq>weekly</changefreq></url>
   <url><loc>https://adniamey2000.org/en/galerie</loc><priority>0.5</priority><changefreq>monthly</changefreq></url>
   <url><loc>https://adniamey2000.org/en/blog</loc><priority>0.7</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://adniamey2000.org/en/article</loc><priority>0.6</priority><changefreq>monthly</changefreq></url>
   <url><loc>https://adniamey2000.org/en/contact</loc><priority>0.5</priority><changefreq>monthly</changefreq></url>
   <url><loc>https://adniamey2000.org/en/legal-notice</loc><priority>0.4</priority><changefreq>yearly</changefreq></url>
   <url><loc>https://adniamey2000.org/en/privacy-policy</loc><priority>0.4</priority><changefreq>yearly</changefreq></url>
@@ -31,6 +33,7 @@
   <url><loc>https://adniamey2000.org/ha/evenements</loc><priority>0.6</priority><changefreq>weekly</changefreq></url>
   <url><loc>https://adniamey2000.org/ha/galerie</loc><priority>0.5</priority><changefreq>monthly</changefreq></url>
   <url><loc>https://adniamey2000.org/ha/blog</loc><priority>0.7</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://adniamey2000.org/ha/article</loc><priority>0.6</priority><changefreq>monthly</changefreq></url>
   <url><loc>https://adniamey2000.org/ha/contact</loc><priority>0.5</priority><changefreq>monthly</changefreq></url>
   <url><loc>https://adniamey2000.org/ha/sanarwa-doka</loc><priority>0.4</priority><changefreq>yearly</changefreq></url>
   <url><loc>https://adniamey2000.org/ha/manufofin-sirri</loc><priority>0.4</priority><changefreq>yearly</changefreq></url>

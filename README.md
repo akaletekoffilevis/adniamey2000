@@ -24,7 +24,9 @@ Site web statique, multilingue et responsive de l'église AD Niamey 2000. Conçu
 | **📱 Responsive** | Menu hamburger mobile, grilles adaptatives |
 | **🍪 RGPD** | Bannière de consentement cookies avec localStorage |
 | **⬆️ Retour en haut** | Bouton flottant après 400px de scroll |
-| **🔧 Administration** | Dashboard, gestion sermons/blog/événements/galerie (templates statiques) |
+| **📄 Pages détail articles** | Articles de blog accessibles via `article.html#article-N` avec routeur JS par hash |
+| **🔧 Administration** | Dashboard, gestion sermons/blog/événements/galerie — accès par email+mot de passe |
+| **🔐 Accès Admin (footer)** | Lien "Admin" dans le footer avec overlay modal (email + mot de passe, min 6 car.) |
 
 ---
 
@@ -69,9 +71,11 @@ AdNiamey2000Site/
 │   ├── contact.html        (Tuntuɓi)
 │   └── 404.html
 │
+├── article.html            # Page détail article FR (routeur hash)
+│
 ├── admin/                  # Panneau d'administration
-│   ├── login.html
-│   ├── index.html          (Dashboard)
+│   ├── login.html          (validation email+password)
+│   ├── index.html          (Dashboard avec session check)
 │   ├── sermons.html
 │   ├── blog.html
 │   ├── evenements.html
@@ -85,8 +89,9 @@ AdNiamey2000Site/
 │
 ├── images/                 # 📥 Dossier pour ajouter les photos
 ├── favicon.svg             # Icône du site (croix bleue)
-├── sitemap.xml             # Plan du site (27 URLs)
+├── sitemap.xml             # Plan du site (30 URLs)
 ├── robots.txt              # Autorise tous les crawlers
+├── admin-overlay.html      # Référence overlay admin (inclus dans script.js)
 ├── BESOIN_CONTENU_REEL.md  # 📋 Liste de tout le contenu à authentifier
 └── DEPLOIEMENT.md          # 📦 Guide complet de déploiement
 ```
