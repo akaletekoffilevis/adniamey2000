@@ -1,182 +1,98 @@
-<img src="favicon.svg" width="64" align="right" alt="AD Niamey 2000">
+# AD Niamey 2000 — Site Web Officiel
 
-# AD Niamey 2000 — Site Officiel de l'Église
+Site web multilingue (FR/EN/HA/IT) de l'Église Assemblées de Dieu d'AD Niamey 2000.
 
-**Assemblées de Dieu au Niger — Niamey**
-
-Site web statique, multilingue et responsive de l'église AD Niamey 2000. Conçu pour être léger, accessible et facile à déployer.
-
----
-
-## ✨ Fonctionnalités
-
-| Fonctionnalité | Description |
-|---|---|
-| **🌍 3 langues** | Français (`/fr/`), Anglais (`/en/`), Haoussa (`/ha/`) avec sélecteur dans la navbar |
-| **📖 Pages d'information** | Accueil, À propos (histoire, mission, doctrine), Équipe pastorale |
-| **🎧 Sermons & Podcasts** | Lecteur audio avec barre de progression, filtres par catégorie (Dimanche, Étude, Conférence, Jeunesse) |
-| **📸 Galerie photo** | Lightbox, filtres (Cultes, Événements, Jeunesse, Baptêmes) |
-| **📅 Calendrier** | Calendrier dynamique des événements avec navigation mois par mois |
-| **📝 Blog** | Articles avec catégories, sidebar, formulaire d'abonnement newsletter |
-| **🙏 Formulaire de prière** | Section dédiée avec types de demande (guérison, famille, finances, etc.) |
-| **💳 Dons en ligne** | Orange Money, Wave, M-Pesa |
-| **🎨 Animations** | Apparition au défilement (IntersectionObserver) |
-| **📱 Responsive** | Menu hamburger mobile, grilles adaptatives |
-| **🍪 RGPD** | Bannière de consentement cookies avec localStorage |
-| **⬆️ Retour en haut** | Bouton flottant après 400px de scroll |
-| **📄 Pages détail articles** | Articles de blog accessibles via `article.html#article-N` avec routeur JS par hash |
-| **🔧 Administration** | Dashboard, gestion sermons/blog/événements/galerie — accès par email+mot de passe |
-| **🔐 Accès Admin (footer)** | Lien "Admin" dans le footer avec overlay modal (email + mot de passe, min 6 car.) |
-
----
-
-## 🏗️ Structure du projet
+## Architecture
 
 ```
-AdNiamey2000Site/
-│
-├── index.html              # Accueil FR (racine du site)
-├── 404.html                # Page d'erreur (pour GitHub Pages)
-│
-├── fr/                     # Version française
-│   ├── index.html
-│   ├── a-propos.html
-│   ├── pasteurs.html
-│   ├── sermons.html
-│   ├── evenements.html
-│   ├── galerie.html
-│   ├── blog.html
-│   ├── contact.html
-│   └── 404.html
-│
-├── en/                     # English version
-│   ├── index.html
-│   ├── a-propos.html       (About)
-│   ├── pasteurs.html       (Team)
-│   ├── sermons.html
-│   ├── evenements.html     (Events)
-│   ├── galerie.html        (Gallery)
-│   ├── blog.html
-│   ├── contact.html
-│   └── 404.html
-│
-├── ha/                     # Harshen Hausa
-│   ├── index.html
-│   ├── a-propos.html       (Game da Mu)
-│   ├── pasteurs.html       (Tawaga)
-│   ├── sermons.html        (Wa'azi)
-│   ├── evenements.html     (Abubuwa)
-│   ├── galerie.html        (Hotuna)
-│   ├── blog.html           (Labarai)
-│   ├── contact.html        (Tuntuɓi)
-│   └── 404.html
-│
-├── article.html            # Page détail article FR (routeur hash)
-│
-├── admin/                  # Panneau d'administration
-│   ├── login.html          (validation email+password)
-│   ├── index.html          (Dashboard avec session check)
+adniamey2000site/
+├── frontend/          # Site vitrine SPA (HTML/CSS/JS vanilla + i18n)
+│   ├── index.html     # Page d'accueil (et pages par route)
+│   ├── css/style.css  # Styles complets
+│   ├── js/
+│   │   ├── script.js  # Interactions, thème, audio, galerie, hash routing
+│   │   ├── i18n.js    # Système de traduction (data-i18n)
+│   │   ├── api.js     # Client API REST (cache localStorage)
+│   │   └── service-worker.js  # PWA cache
+│   └── data/          # Fichiers de traduction JSON
+│       ├── fr.json
+│       ├── en.json
+│       ├── ha.json
+│       └── it.json
+├── admin/             # Interface d'administration (HTML statique + API)
+│   ├── login.html     # Connexion admin (JWT via backend)
+│   ├── index.html     # Dashboard
 │   ├── sermons.html
 │   ├── blog.html
 │   ├── evenements.html
 │   └── galerie.html
-│
-├── css/
-│   └── style.css           # Styles uniques (variables, layout, composants)
-│
-├── js/
-│   └── script.js           # JS vanilla (menu, filtres, animations, lightbox, audio)
-│
-├── images/                 # 📥 Dossier pour ajouter les photos
-├── favicon.svg             # Icône du site (croix bleue)
-├── sitemap.xml             # Plan du site (30 URLs)
-├── robots.txt              # Autorise tous les crawlers
-├── admin-overlay.html      # Référence overlay admin (inclus dans script.js)
-├── BESOIN_CONTENU_REEL.md  # 📋 Liste de tout le contenu à authentifier
-└── DEPLOIEMENT.md          # 📦 Guide complet de déploiement
+├── backend/           # API REST (Node.js + Express + SQLite)
+│   └── src/
+│       ├── index.js
+│       ├── db/        # Schema + seed
+│       ├── routes/    # sermons, articles, events, gallery, auth
+│       └── middleware/ # JWT auth
+├── 404.html           # Page 404 personnalisée (racine)
+├── robots.txt
+├── sitemap.xml
+└── favicon.svg
 ```
 
----
+## Stack
 
-## 🧰 Technologies utilisées
+| Couche | Technologie |
+|--------|------------|
+| **Frontend** | HTML5 + CSS3 + JavaScript vanilla (pas de framework) |
+| **i18n** | Système data-i18n avec fichiers JSON |
+| **Backend** | Node.js + Express + better-sqlite3 |
+| **Base de données** | SQLite (`backend/database/adniamey.db`) |
+| **Auth** | JWT (jsonwebtoken + bcryptjs) |
+| **Langues** | FR / EN / HA / IT |
 
-- **HTML5** sémantique (balises `article`, `section`, `nav`, `aside`, `main`, `footer`)
-- **CSS3** pur — variables CSS, Flexbox, Grid, animations, Media Queries
-- **JavaScript** vanilla (ES6) — sans jQuery, sans framework
-- **Google Fonts** — Inter (sans-serif) + Playfair Display (serif)
-- **SVG** pour toutes les icônes (intégrées, pas de fichiers externes)
-- **Schema.org** — microdonnées pour le référencement
-- **Open Graph / Twitter Cards** — partage sur les réseaux sociaux
+## Installation
 
-Zéro dépendance. Zéro build. Ouvre `index.html` et ça marche.
-
----
-
-## 🚀 Déploiement rapide
-
-### GitHub Pages
+### 1. Backend
 
 ```bash
-# 1. Créer le dépôt sur https://github.com/new (nom: adniamey2000, Public)
-# 2. Pousser le code
-git remote add origin https://github.com/akaletekoffilevis/adniamey2000.git
-git push -u origin main
-
-# 3. Activer dans Settings → Pages → Branch: main → Save
+cd backend
+npm install
+npm run seed    # Initialise la base avec des données fictives
+npm run dev     # Lance le serveur sur http://localhost:3001
 ```
 
-Le site sera en ligne sur :
-**`https://akaletekoffilevis.github.io/adniamey2000/`**
+### 2. Frontend
 
-### Noms de domaine
+Ouvrez `frontend/index.html` dans un navigateur, ou servez-le via :
 
-| Page | URL |
-|---|---|
-| Accueil FR | `https://.../adniamey2000/` |
-| Accueil EN | `https://.../adniamey2000/en/` |
-| Accueil HA | `https://.../adniamey2000/ha/` |
-| Sermons EN | `https://.../adniamey2000/en/sermons` |
+```bash
+cd frontend
+python3 -m http.server 8000
+# ou
+npx serve .
+```
 
----
+## API Endpoints
 
-## 📋 Contenu à personnaliser
+| Méthode | Route | Description |
+|---------|-------|-------------|
+| GET | `/api/sermons` | Liste des sermons |
+| GET | `/api/sermons/:id` | Détail d'un sermon |
+| GET | `/api/articles` | Liste des articles |
+| GET | `/api/articles/:id` | Détail d'un article |
+| GET | `/api/events` | Liste des événements |
+| GET | `/api/events/:id` | Détail d'un événement |
+| GET | `/api/gallery` | Galerie photos |
+| POST | `/api/auth/login` | Authentification admin |
 
-Avant la mise en ligne, voir **`BESOIN_CONTENU_REEL.md`** pour remplacer :
+## Fonctionnalités
 
-- [ ] Photos de l'église, des pasteurs, des événements (`images/`)
-- [ ] Numéros de téléphone réels (Orange Money, Wave, M-Pesa)
-- [ ] Adresse exacte et boîte postale
-- [ ] Noms réels des pasteurs et responsables
-- [ ] Fichiers audio des sermons (`audio/`)
-- [ ] Liens réseaux sociaux (Facebook, YouTube, WhatsApp)
-- [ ] Témoignages de vrais membres
-
----
-
-## 👥 Équipe (contenu fictif à valider)
-
-| Rôle | Nom |
-|---|---|
-| Pasteur Principal | Amadou Issoufou |
-| Pasteur Associé | Samuel Tchétché |
-| Pasteur des Jeunes | David Yacoubou |
-| Responsable Louange | Élie Garba |
-| Responsable Enseignement | Moïse Moussa |
-| Responsable Intercession | Esther Oumarou |
-| Responsable Jeunesse | Jonas Boubacar |
-| Responsable Action Sociale | Marie Halidou |
-| Responsable Administration | Pierre Kalla |
-
----
-
-## 📞 Contact
-
-- **Adresse :** Quartier Yantala Haut, Niamey, Niger
-- **Email :** contact@adniamey2000.org
-- **Téléphone :** +227 90 00 00 00
-
----
-
-## 📄 Licence
-
-© 2025 AD Niamey 2000 — Assemblées de Dieu au Niger.
+- **Multilingue** : FR/EN/HA/IT avec bascule en direct (sans rechargement)
+- **Thème clair/sombre** : avec persistance localStorage + détection système
+- **Lecteur audio** : pour les sermons
+- **Lightbox** : pour la galerie photos
+- **Vidéos YouTube** : intégration avec lecteur modal
+- **Hash routing** : pages détail articles via `#/article/:id`
+- **Admin** : panneau de gestion avec authentification JWT
+- **PWA** : service worker avec cache offline
+- **SEO** : meta tags, Open Graph, JSON-LD, sitemap, robots.txt
+- **Cookies** : bannière de consentement

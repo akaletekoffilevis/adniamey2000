@@ -1,0 +1,561 @@
+window._tr = window._tr || {};
+window._tr.fr = {
+  "lang": "fr",
+  "code": "FR",
+  "flag": "🇫🇷",
+  "dir": "ltr",
+  "church": {
+    "name": "AD Niamey 2000",
+    "desc": "Assemblées de Dieu au Niger. Une famille de foi où chacun est le bienvenu."
+  },
+  "nav": {
+    "home": "Accueil",
+    "about": "À propos",
+    "ministry": "Ministère",
+    "sermons": "Sermons",
+    "events": "Événements",
+    "gallery": "Galerie",
+    "blog": "Blog",
+    "contact": "Contact",
+    "donate": "Faire un don",
+    "admin": "Admin"
+  },
+  "hero": {
+    "home": {
+      "title": "Bienvenue à AD Niamey 2000",
+      "subtitle": "Une famille de foi où l'amour de Dieu transforme des vies. Nous vous accueillons avec joie pour grandir ensemble dans la grâce et la connaissance de notre Seigneur.",
+      "badge": "Bienvenue dans la maison du Seigneur"
+    },
+    "about": {
+      "title": "À Propos de Nous",
+      "subtitle": "Notre histoire, notre mission, notre foi."
+    },
+    "sermons": {
+      "title": "Nos Sermons",
+      "subtitle": "Des messages inspirants pour nourrir votre foi."
+    },
+    "events": {
+      "title": "Nos Événements",
+      "subtitle": "Restez connecté à la vie de notre église."
+    },
+    "gallery": {
+      "title": "Galerie Photos & Vidéos",
+      "subtitle": "Découvrez en images les moments forts de notre vie d'église."
+    },
+    "blog": {
+      "title": "Notre Blog",
+      "subtitle": "Articles, réflexions et enseignements pour grandir dans la foi."
+    },
+    "contact": {
+      "title": "Contactez-Nous",
+      "subtitle": "Nous serions ravis de vous entendre."
+    },
+    "ministere": {
+      "title": "Notre Ministère",
+      "subtitle": "Découvrez notre équipe pastorale et nos départements."
+    }
+  },
+  "home": {
+    "welcome": {
+      "title": "Bienvenue dans notre église",
+      "text": "Nous sommes une famille de foi, unie dans l'amour de Dieu, dédiée à servir notre communauté et à partager l'Évangile de Jésus-Christ. Que vous soyez de passage ou que vous cherchiez une famille spirituelle, vous êtes chez vous ici.",
+      "text2": "Notre mission est de faire des disciples, d'adorer Dieu et de servir notre prochain avec amour.",
+      "cta": "En savoir plus sur nous"
+    },
+    "stats": {
+      "years": "Ans d'existence",
+      "members": "Membres",
+      "sermons": "Sermons",
+      "events": "Ministères"
+    },
+    "cta": {
+      "title": "Rejoignez-nous ce Dimanche",
+      "text": "Nous serions honorés de vous accueillir parmi nous. Venez vivre un moment de foi, de louange et de communauté.",
+      "button": "Nous contacter"
+    },
+    "schedule": {
+      "title": "Nos Horaires de Cultes",
+      "subtitle": "Rejoignez-nous pour adorer le Seigneur et grandir dans Sa Parole.",
+      "cta": "Nos horaires",
+      "services": "Cultes par semaine",
+      "sunday": {
+        "title": "Culte Dominical"
+      },
+      "wednesday": {
+        "title": "Étude Biblique"
+      },
+      "friday": {
+        "title": "Intercession"
+      }
+    },
+    "sermons": {
+      "1": {
+        "tag": "Récent",
+        "title": "La Puissance de la Foi",
+        "pastor": "Pasteur Amadou"
+      },
+      "2": {
+        "tag": "Récent",
+        "title": "Vivre dans la Paix de Dieu",
+        "pastor": "Pasteur Samuel Tchétché"
+      },
+      "3": {
+        "tag": "Récent",
+        "title": "L'Espoir qui ne déçoit pas",
+        "pastor": "Pasteur David Yacoubou"
+      },
+      "title": "Derniers Sermons",
+      "subtitle": "Des messages puissants pour nourrir votre foi au quotidien.",
+      "cta": "Voir tous les sermons"
+    },
+    "testimonials": {
+      "1": {
+        "text": "Depuis que j'ai mis les pieds dans cette église, ma vie a radicalement changé. J'ai trouvé la paix, des frères et sœurs qui m'ont soutenu dans les moments difficiles. Gloire à Dieu !",
+        "author": "— Sœur Hadiza"
+      },
+      "2": {
+        "text": "Les études bibliques du mercredi soir m'ont permis de mieux comprendre la Parole de Dieu. Je suis reconnaissant pour les enseignements solides que nous recevons ici.",
+        "author": "— Frère Mamane"
+      },
+      "3": {
+        "text": "Quand j'ai perdu mon emploi, l'église s'est mobilisée pour prier avec moi et m'a soutenu. Dieu a ouvert une porte mieux que tout ce que j'imaginais. Merci à cette famille de foi !",
+        "author": "— Frère Adamou"
+      },
+      "title": "Témoignages",
+      "subtitle": "Des vies transformées par la puissance de Dieu."
+    },
+    "blog": {
+      "1": {
+        "tag": "Événement",
+        "title": "Conférence Jeunesse « Génération Impact »",
+        "text": "Grand rassemblement des jeunes avec des enseignements inspirants, ateliers et moments de louange."
+      },
+      "2": {
+        "tag": "Enseignement",
+        "title": "Méditation Matinale (6h-7h)",
+        "text": "Rejoignez-nous chaque matin de 6h à 7h pour un moment de prière et de méditation de la Parole."
+      },
+      "3": {
+        "tag": "Annonce",
+        "title": "Baptême Communautaire",
+        "text": "Inscriptions ouvertes pour le prochain baptême au fleuve Niger. Contactez le bureau !"
+      },
+      "title": "Dernières Actualités",
+      "subtitle": "Restez informé des événements et des activités de l'église.",
+      "cta": "Voir toutes les actualités"
+    },
+    "don": {
+      "title": "Soutenir l'Œuvre",
+      "subtitle": "Vos dons contribuent à l'avancement du Royaume de Dieu. Merci pour votre générosité et votre fidélité dans le soutien de l'église.",
+      "orangemoney": "Orange Money",
+      "wave": "Wave",
+      "mpesa": "M-Pesa",
+      "verse": "Que Dieu vous bénisse abondamment pour votre générosité ! 2 Corinthiens 9:7"
+    }
+  },
+  "about": {
+    "page": {
+      "title": "À Propos - AD Niamey 2000 | Notre Histoire, Mission et Vision"
+    },
+    "history": "Notre Histoire",
+    "historyText": "Fondée en 2008 dans le quartier Yantala de Niamey, l'AD Niamey 2000 (Assemblées de Dieu du Niger) est née de la vision du Pasteur Amadou Issoufou et d'un petit groupe de croyants désireux de voir l'Évangile de Jésus-Christ transformer la capitale nigérienne.",
+    "historyText2": "Ce qui a commencé comme une cellule de prière de 15 personnes est aujourd'hui une communauté dynamique de plus de 120 membres. Notre église est reconnue pour son engagement dans l'enseignement biblique, la louange, l'intercession et les œuvres sociales auprès des plus démunis.",
+    "historyText3": "Nous sommes affiliés aux Assemblées de Dieu du Niger (ADN), mouvement pentecôtiste présent dans toutes les régions du pays. Notre vision est de faire des disciples qui impactent leur génération par l'amour et la puissance de Dieu.",
+    "mission": "Notre Mission",
+    "missionText": "Proclamer l'Évangile de Jésus-Christ, faire des disciples et servir notre communauté avec amour et compassion.",
+    "missionPoint1": "Conduire les âmes à Christ par l'évangélisation",
+    "missionPoint2": "Former des disciples par l'enseignement de la Parole",
+    "missionPoint3": "Servir notre communauté avec amour et compassion",
+    "missionPoint4": "Adorer Dieu en esprit et en vérité",
+    "vision": "Notre Vision",
+    "visionText": "Une église où chaque personne rencontre Dieu, grandit dans la foi et impacte sa génération pour Christ.",
+    "visionPoint1": "Une église de prière et de louange",
+    "visionPoint2": "Une église qui grandit et se multiplie",
+    "visionPoint3": "Une église qui impacte sa génération",
+    "pastors": {
+      "1": {
+        "name": "Pasteur Amadou Ousmane",
+        "bio": "Pasteur principal d'AD Niamey 2000 depuis sa fondation. Docteur en théologie, il est passionné par l'enseignement de la Parole et la formation des leaders."
+      },
+      "2": {
+        "name": "Pasteur Samuel Tchétché",
+        "bio": "Pasteur associé. Visionnaire, il dirige les ministères de louange et d'intercession."
+      },
+      "3": {
+        "name": "Pasteur David Yacoubou",
+        "bio": "Pasteur des jeunes. Dynamique et créatif, il anime le ministère des jeunes et des adolescents."
+      },
+      "subtitle": "Des hommes de Dieu dévoués à servir le troupeau."
+    },
+    "seniorPastor": "Pasteur Principal",
+    "associatePastor": "Pasteur Associé",
+    "youthPastor": "Pasteur des Jeunes",
+    "beliefs": {
+      "title": "Notre Confession de Foi",
+      "subtitle": "Les fondements bibliques sur lesquels repose notre foi.",
+      "bible": "La Bible",
+      "bibleText": "La Bible est la Parole inspirée de Dieu, notre autorité suprême en matière de foi et de conduite.",
+      "salut": "Le Salut",
+      "salutText": "Le salut est par la grâce, par le moyen de la foi en Jésus-Christ, seul Médiateur entre Dieu et les hommes.",
+      "spirit": "Le Saint-Esprit",
+      "spiritText": "Nous croyons au baptême du Saint-Esprit et à ses dons qui opèrent dans l'Église aujourd'hui.",
+      "church": "L'Église",
+      "churchText": "L'Église est le corps de Christ, une communauté de croyants unis dans la foi, l'amour et la mission."
+    }
+  },
+  "ministry": {
+    "senior": {
+      "name": "Pasteur Amadou Ousmane",
+      "bio1": "Pasteur principal d'AD Niamey 2000 depuis sa fondation. Docteur en théologie, il est passionné par l'enseignement de la Parole et la formation des leaders.",
+      "bio2": "Son ministère est marqué par une profonde onction pastorale et un amour sincère pour le peuple de Dieu.",
+      "bio3": "Marié et père de trois enfants, il est un modèle de foi et d'intégrité pour toute l'église."
+    },
+    "associate": {
+      "bio": "Pasteur associé. Visionnaire, il dirige les ministères de louange et d'intercession."
+    },
+    "youth": {
+      "bio": "Pasteur des jeunes depuis 2018. Il anime aussi l'école biblique du mercredi."
+    },
+    "team": {
+      "title": "Notre Équipe Pastorale",
+      "subtitle": "Une équipe unie et diversifiée au service de Dieu."
+    },
+    "departments": {
+      "title": "Nos Départements",
+      "subtitle": "Des ministères variés pour toucher chaque âge."
+    },
+    "children": "Ministère des Enfants",
+    "children.desc": "Un programme adapté pour nos enfants avec des enseignements bibliques interactifs.",
+    "youth.desc": "Des activités dynamiques pour former la prochaine génération de leaders.",
+    "men": "Ministère des Hommes",
+    "men.desc": "Des rencontres pour fortifier les hommes dans leur rôle de leaders spirituels.",
+    "women": "Ministère des Femmes",
+    "women.desc": "Un espace d'encouragement et de croissance pour les femmes de l'église.",
+    "music": "Ministère de Louange",
+    "music.desc": "L'adoration au cœur de notre église, avec une équipe de musiciens et choristes dévoués.",
+    "mission": "Mission et Évangélisation",
+    "mission.desc": "Partager l'amour de Dieu à travers des actions missionnaires locales et internationales."
+  },
+  "sermons": {
+    "pastor": "Prédicateur",
+    "duration": "Durée",
+    "category": "Catégorie",
+    "watch": "Regarder",
+    "all": "Tous les sermons",
+    "filter": {
+      "all": "Tous",
+      "sunday": "Dimanche",
+      "study": "Étude Biblique",
+      "conference": "Conférence",
+      "youth": "Jeunesse"
+    },
+    "categories": {
+      "culte": "Culte",
+      "enseignement": "Enseignement",
+      "jeunesse": "Jeunesse"
+    },
+    "videos": {
+      "title": "Vidéos des Sermons"
+    },
+    "item1": {
+      "title": "La Puissance de la Foi",
+      "pastor": "Pasteur Amadou",
+      "duration": "45 min"
+    },
+    "item2": {
+      "title": "Vivre dans la Paix de Dieu",
+      "pastor": "Pasteur Samuel Tchétché",
+      "duration": "38 min"
+    },
+    "item3": {
+      "title": "L'Espoir qui ne déçoit pas",
+      "pastor": "Pasteur David Yacoubou",
+      "duration": "42 min"
+    },
+    "item4": {
+      "title": "La Grâce de Dieu",
+      "pastor": "Pasteur Amadou",
+      "duration": "50 min"
+    },
+    "item5": {
+      "title": "La Prière qui touche le Cœur de Dieu",
+      "pastor": "Pasteur Samuel Tchétché",
+      "duration": "35 min"
+    },
+    "item6": {
+      "title": "L'Amour de Dieu pour nous",
+      "pastor": "Pasteur David Yacoubou",
+      "duration": "40 min"
+    },
+    "video1": {
+      "title": "Sermon : La Foi en Action",
+      "pastor": "Pasteur Amadou"
+    },
+    "video2": {
+      "title": "Sermon : Le Repos en Dieu",
+      "pastor": "Pasteur Samuel Tchétché"
+    },
+    "video3": {
+      "title": "Sermon : Un Cœur Reconnaissant",
+      "pastor": "Pasteur David Yacoubou"
+    }
+  },
+  "gallery": {
+    "photos": "Photos",
+    "videos": "Vidéos",
+    "watch": "Regarder",
+    "filter": {
+      "all": "Toutes",
+      "cultes": "Cultes",
+      "evenements": "Événements",
+      "jeunesse": "Jeunesse",
+      "baptemes": "Baptêmes"
+    },
+    "item1": {
+      "label": "Culte Dominical - Mars 2025"
+    },
+    "item2": {
+      "label": "Conférence Jeunesse 2025"
+    },
+    "item3": {
+      "label": "Baptême au Fleuve Niger"
+    },
+    "item4": {
+      "label": "Soirée de Louange"
+    },
+    "item5": {
+      "label": "Séminaire de Leadership"
+    },
+    "item6": {
+      "label": "Visite des Missionnaires"
+    },
+    "video1": {
+      "title": "Meilleur moment de louange",
+      "desc": "Extrait du culte du dimanche"
+    },
+    "video2": {
+      "title": "Témoignage : une vie transformée",
+      "desc": "Sœur Marie partage son histoire"
+    },
+    "video3": {
+      "title": "Enseignement sur la Prière",
+      "desc": "Pasteur Samuel Tchétché"
+    },
+    "video4": {
+      "title": "Conférence Jeunesse 2025",
+      "desc": "Moments forts de la conférence"
+    }
+  },
+  "blog": {
+    "readMore": "Lire la suite",
+    "author": "Auteur",
+    "status": {
+      "published": "Publié",
+      "draft": "Brouillon"
+    },
+    "categories": {
+      "title": "Catégories",
+      "event": "Événements",
+      "teaching": "Enseignements",
+      "meditation": "Méditations",
+      "testimony": "Témoignages",
+      "announcement": "Annonces"
+    },
+    "recent": {
+      "title": "Articles Récents"
+    },
+    "subscribe": {
+      "title": "Newsletter",
+      "text": "Recevez nos dernières publications par email.",
+      "placeholder": "Votre adresse email",
+      "btn": "S'abonner"
+    },
+    "posts": {
+      "1": {
+        "title": "Conférence Jeunesse « Génération Impact »",
+        "tag": "Événement",
+        "excerpt": "Grand rassemblement des jeunes avec des enseignements inspirants, ateliers et moments de louange.",
+        "author": "Pasteur Amadou",
+        "date": "12 Mars 2025"
+      },
+      "2": {
+        "title": "L'Importance de la Prière Matinale",
+        "tag": "Enseignement",
+        "excerpt": "Découvrez pourquoi la prière du matin peut transformer votre journée et votre relation avec Dieu.",
+        "author": "Pasteur Samuel Tchétché",
+        "date": "28 Février 2025"
+      },
+      "3": {
+        "title": "Notre Mission au Niger",
+        "tag": "Témoignage",
+        "excerpt": "Un rapport de nos missionnaires sur l'impact de l'Évangile dans les régions reculées du Niger.",
+        "author": "Pasteur David Yacoubou",
+        "date": "15 Février 2025"
+      }
+    }
+  },
+  "events": {
+    "1": {
+      "title": "Conférence Jeunesse Génération Impact",
+      "tag": "Jeunesse",
+      "desc": "Grand rassemblement des jeunes avec des enseignements inspirants, ateliers et moments de louange."
+    },
+    "2": {
+      "title": "Méditation Matinale",
+      "tag": "Quotidien",
+      "desc": "Rejoignez-nous chaque matin pour un moment de prière et de méditation de la Parole."
+    },
+    "3": {
+      "title": "Baptême Communautaire",
+      "tag": "Baptême",
+      "desc": "Inscriptions ouvertes pour le prochain baptême au fleuve Niger."
+    },
+    "4": {
+      "title": "Nuit de Louange",
+      "tag": "Louange",
+      "desc": "Une soirée spéciale de louange et d'adoration.",
+      "location": "À l'église"
+    },
+    "location": "Lieu",
+    "more": "Plus d'infos",
+    "status": {
+      "published": "Publié",
+      "draft": "Brouillon"
+    },
+    "month": {
+      "may": "Mai 2026"
+    },
+    "calendar": {
+      "title": "Calendrier des Événements"
+    },
+    "daily": {
+      "title": "Méditation Matinale",
+      "sub": "Tous les jours, 6h00 - 7h00"
+    },
+    "list": {
+      "title": "Événements à Venir"
+    }
+  },
+  "contact": {
+    "title": "Écrivez-nous",
+    "name": "Nom",
+    "email": {
+      "title": "Email"
+    },
+    "subject": "Sujet",
+    "message": "Message",
+    "send": "Envoyer",
+    "desc": "Vous avez une question, une demande de prière ou vous souhaitez plus d'informations ? Remplissez le formulaire ci-dessous.",
+    "coords": "Nos Coordonnées",
+    "success": {
+      "title": "Message Envoyé !",
+      "text": "Votre message a bien été envoyé. Nous vous répondrons dans les plus brefs délais.",
+      "btn": "Fermer"
+    },
+    "phone": {
+      "title": "Téléphone"
+    },
+    "address": {
+      "title": "Notre Adresse",
+      "line1": "Quartier Yantala Haut, Niamey",
+      "line2": "Rue des Assemblées de Dieu",
+      "line3": "BP : 12345 Niamey, Niger"
+    },
+    "map": {
+      "title": "Nous trouver",
+      "text": "Niamey, Niger - Quartier Plateau",
+      "link": "Voir sur Google Maps"
+    },
+    "prayer": {
+      "title": "Soumettre une Demande de Prière",
+      "subtitle": "Notre équipe d'intercession priera pour vous. Toutes les demandes restent confidentielles.",
+      "subject": "Type de demande",
+      "subjectPlaceholder": "Choisissez un sujet",
+      "subject1": "Guérison",
+      "subject2": "Situation Financière",
+      "subject3": "Famille et Mariage",
+      "subject4": "Travail et Carrière",
+      "subject5": "Autre",
+      "message": "Votre demande de prière",
+      "send": "Envoyer ma demande de prière",
+      "name": "Votre prénom (ou anonyme)",
+      "namePlaceholder": "Votre prénom",
+      "placeholder": "Écrivez ici votre demande de prière...",
+      "commitment": "Notre Engagement",
+      "commit1": {
+        "title": "Prière quotidienne",
+        "desc": "Notre équipe prie pour chaque demande reçue chaque jour."
+      },
+      "commit2": {
+        "title": "Intercession le vendredi",
+        "desc": "Chaque vendredi, notre réunion d'intercession porte vos demandes devant le trône de Dieu."
+      },
+      "commit3": {
+        "title": "Confidentialité totale",
+        "desc": "Vos demandes restent strictement confidentielles entre vous et notre équipe de prière."
+      },
+      "verse": "« Ne vous inquiétez de rien, mais en toute chose, par la prière et la supplication, avec des actions de grâces, faites connaître vos demandes à Dieu. »",
+      "verseRef": "— Philippiens 4:6"
+    }
+  },
+  "footer": {
+    "rights": "Tous droits réservés.",
+    "quickLinks": "Liens rapides",
+    "schedule": "Horaires",
+    "contact": "Contact",
+    "sunday": "Dimanche",
+    "wednesday": "Mercredi",
+    "friday": "Vendredi",
+    "address": "Niamey, Niger",
+    "email": "contact@adniamey2000.org",
+    "phone": "+227 00 00 00 00",
+    "legal": "Mentions légales",
+    "privacy": "Politique de confidentialité",
+    "adminLink": "Admin"
+  },
+  "social": {
+    "facebook": "Facebook",
+    "youtube": "YouTube",
+    "whatsapp": "WhatsApp"
+  },
+  "ministere": {
+    "page": {
+      "title": "Notre Ministère - AD Niamey 2000 | Pasteurs et Équipes"
+    }
+  },
+  "legal": {
+    "page": {
+      "title": "Mentions Légales - AD Niamey 2000"
+    }
+  },
+  "privacy": {
+    "page": {
+      "title": "Politique de Confidentialité - AD Niamey 2000"
+    }
+  },
+  "error": {
+    "page": {
+      "title": "404 - Page non trouvée | AD Niamey 2000"
+    }
+  },
+  "_404": {
+    "title": "Page non trouvée",
+    "text": "Désolé, la page que vous cherchez n'existe pas ou a été déplacée.",
+    "cta": "Retour à l'accueil"
+  },
+  "common": {
+    "loading": "Chargement...",
+    "error": "Une erreur est survenue",
+    "viewAll": "Voir tout",
+    "lightMode": "Mode clair",
+    "darkMode": "Mode sombre",
+    "backToTop": "Retour en haut",
+    "cookieBanner": "Ce site utilise des cookies pour améliorer votre expérience.",
+    "cookieAccept": "Accepter",
+    "cookieDecline": "Refuser",
+    "languages": "Langues",
+    "close": "Fermer",
+    "minutes": "min",
+    "download": "Télécharger"
+  }
+};

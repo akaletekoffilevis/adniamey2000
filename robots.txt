@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
-
 Sitemap: https://adniamey2000.org/sitemap.xml
+# Note: site is at /frontend/, but robots.txt and sitemap.xml are at root

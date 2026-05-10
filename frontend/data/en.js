@@ -1,0 +1,385 @@
+window._tr = window._tr || {};
+window._tr.en = {
+  "lang": "en",
+  "code": "EN",
+  "flag": "🇬🇧",
+  "dir": "ltr",
+  "church": {
+    "name": "AD Niamey 2000",
+    "desc": "Assemblies of God in Niger. A family of faith where everyone is welcome."
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "ministry": "Ministry",
+    "sermons": "Sermons",
+    "events": "Events",
+    "gallery": "Gallery",
+    "blog": "Blog",
+    "contact": "Contact",
+    "donate": "Donate",
+    "admin": "Admin"
+  },
+  "hero": {
+    "home": {
+      "title": "Welcome to AD Niamey 2000",
+      "subtitle": "A family of faith where God's love transforms lives. We welcome you with joy to grow together in the grace and knowledge of our Lord.",
+      "badge": "Welcome to the house of the Lord"
+    },
+    "about": { "title": "About Us", "subtitle": "Our story, our mission, our faith." },
+    "sermons": { "title": "Our Sermons", "subtitle": "Inspiring messages to nourish your faith." },
+    "events": { "title": "Our Events", "subtitle": "Stay connected to the life of our church." },
+    "gallery": { "title": "Photo & Video Gallery", "subtitle": "Discover the highlights of our church life through images." },
+    "blog": { "title": "Our Blog", "subtitle": "Articles, reflections and teachings to grow in faith." },
+    "contact": { "title": "Contact Us", "subtitle": "We would love to hear from you." },
+    "ministere": {
+      "title": "Our Ministry",
+      "subtitle": "Discover our pastoral team and departments."
+    }
+  },
+  "home": {
+    "welcome": {
+      "title": "Welcome to our church",
+      "text": "We are a family of faith, united in God's love, dedicated to serving our community and sharing the Gospel of Jesus Christ. Whether you are passing through or looking for a spiritual family, you are at home here.",
+      "text2": "Our mission is to make disciples, worship God, and serve our neighbor with love.",
+      "cta": "Learn more about us"
+    },
+    "stats": {
+      "years": "Years of existence",
+      "members": "Members",
+      "sermons": "Sermons",
+      "events": "Ministries"
+    },
+    "cta": {
+      "title": "Join us this Sunday",
+      "text": "We would be honored to welcome you among us. Come experience a moment of faith, praise, and community.",
+      "button": "Contact us"
+    },
+    "schedule": {
+      "title": "Our Service Times",
+      "subtitle": "Join us to worship the Lord and grow in His Word.",
+      "cta": "Our schedule",
+      "services": "Services per week",
+      "sunday": { "title": "Sunday Worship" },
+      "wednesday": { "title": "Bible Study" },
+      "friday": { "title": "Intercession" }
+    },
+    "sermons": {
+      "title": "Latest Sermons",
+      "subtitle": "Powerful messages to nourish your faith every day.",
+      "cta": "View all sermons",
+      "1": { "tag": "Recent", "title": "The Power of Faith", "pastor": "Pastor Amadou" },
+      "2": { "tag": "Recent", "title": "Living in God's Peace", "pastor": "Pastor Samuel Tchétché" },
+      "3": { "tag": "Recent", "title": "Hope that does not disappoint", "pastor": "Pastor David Yacoubou" }
+    },
+    "testimonials": {
+      "title": "Testimonials",
+      "subtitle": "Lives transformed by the power of God.",
+      "1": {
+        "text": "Since I set foot in this church, my life has radically changed. I found peace, brothers and sisters who supported me through difficult times. Glory to God!",
+        "author": "— Sister Hadiza"
+      },
+      "2": {
+        "text": "The Wednesday evening Bible studies helped me better understand God's Word. I am grateful for the solid teachings we receive here.",
+        "author": "— Brother Mamane"
+      },
+      "3": {
+        "text": "When I lost my job, the church mobilized to pray with me and supported me. God opened a door better than anything I imagined. Thank you to this family of faith!",
+        "author": "— Brother Adamou"
+      }
+    },
+    "blog": {
+      "title": "Latest News",
+      "subtitle": "Stay informed about church events and activities.",
+      "cta": "View all news",
+      "1": {
+        "tag": "Event",
+        "title": "Youth Conference \"Generation Impact\"",
+        "text": "A large gathering of youth with inspiring teachings, workshops, and times of praise."
+      },
+      "2": {
+        "tag": "Teaching",
+        "title": "Morning Meditation (6am-7am)",
+        "text": "Join us every morning from 6am to 7am for a time of prayer and meditation on the Word."
+      },
+      "3": {
+        "tag": "Announcement",
+        "title": "Community Baptism",
+        "text": "Registration is open for the next baptism at the Niger River. Contact the office!"
+      }
+    },
+    "don": {
+      "title": "Support the Work",
+      "subtitle": "Your donations help advance the Kingdom of God. Thank you for your generosity and faithfulness in supporting the church.",
+      "orangemoney": "Orange Money",
+      "wave": "Wave",
+      "mpesa": "M-Pesa",
+      "verse": "May God bless you abundantly for your generosity! 2 Corinthians 9:7"
+    }
+  },
+  "about": {
+    "page": { "title": "About Us - AD Niamey 2000 | Our History, Mission and Vision" },
+    "history": "Our History",
+    "historyText": "Founded in 2008 in the Yantala neighborhood of Niamey, AD Niamey 2000 (Assemblies of God of Niger) was born from the vision of Pastor Amadou Issoufou and a small group of believers eager to see the Gospel of Jesus Christ transform the Nigerien capital.",
+    "historyText2": "What started as a prayer cell of 15 people is now a dynamic community of over 120 members. Our church is known for its commitment to Bible teaching, worship, intercession, and social work among the needy.",
+    "historyText3": "We are affiliated with the Assemblies of God of Niger (ADN), a Pentecostal movement present in all regions of the country. Our vision is to make disciples who impact their generation through the love and power of God.",
+    "mission": "Our Mission",
+    "missionText": "Proclaim the Gospel of Jesus Christ, make disciples, and serve our community with love and compassion.",
+    "missionPoint1": "Lead souls to Christ through evangelism",
+    "missionPoint2": "Make disciples through the teaching of the Word",
+    "missionPoint3": "Serve our community with love and compassion",
+    "missionPoint4": "Worship God in spirit and in truth",
+    "vision": "Our Vision",
+    "visionText": "A church where every person meets God, grows in faith, and impacts their generation for Christ.",
+    "visionPoint1": "A church of prayer and praise",
+    "visionPoint2": "A church that grows and multiplies",
+    "visionPoint3": "A church that impacts its generation",
+    "pastors": {
+      "subtitle": "Men of God dedicated to serving the flock.",
+      "1": {
+        "name": "Pastor Amadou Ousmane",
+        "bio": "Senior pastor of AD Niamey 2000 since its founding. Doctor of theology, passionate about teaching the Word and training leaders."
+      },
+      "2": {
+        "name": "Pastor Samuel Tchétché",
+        "bio": "Associate pastor. Visionary, he leads the worship and intercession ministries."
+      },
+      "3": {
+        "name": "Pastor David Yacoubou",
+        "bio": "Youth pastor. Dynamic and creative, he leads the youth and teen ministry."
+      }
+    },
+    "seniorPastor": "Senior Pastor",
+    "associatePastor": "Associate Pastor",
+    "youthPastor": "Youth Pastor",
+    "beliefs": {
+      "title": "Our Confession of Faith",
+      "subtitle": "The biblical foundations on which our faith rests.",
+      "bible": "The Bible",
+      "bibleText": "The Bible is the inspired Word of God, our supreme authority in matters of faith and conduct.",
+      "salut": "Salvation",
+      "salutText": "Salvation is by grace, through faith in Jesus Christ, the only Mediator between God and men.",
+      "spirit": "The Holy Spirit",
+      "spiritText": "We believe in the baptism of the Holy Spirit and His gifts that operate in the Church today.",
+      "church": "The Church",
+      "churchText": "The Church is the body of Christ, a community of believers united in faith, love, and mission."
+    }
+  },
+  "ministry": {
+    "senior": {
+      "name": "Pastor Amadou Ousmane",
+      "bio1": "Senior pastor of AD Niamey 2000 since its founding. Doctor of theology, passionate about teaching the Word and training leaders.",
+      "bio2": "His ministry is marked by a deep pastoral anointing and a sincere love for God's people.",
+      "bio3": "Married and father of three children, he is a model of faith and integrity for the whole church."
+    },
+    "associate": {
+      "bio": "Associate pastor. Visionary, he leads the worship and intercession ministries."
+    },
+    "youth": {
+      "bio": "Youth pastor since 2018. He also leads the Wednesday Bible school."
+    },
+    "team": {
+      "title": "Our Pastoral Team",
+      "subtitle": "A united and diverse team serving God."
+    },
+    "departments": {
+      "title": "Our Departments",
+      "subtitle": "Various ministries to reach every age group."
+    },
+    "children": "Children's Ministry",
+    "children.desc": "A tailored program for our children with interactive Bible teachings.",
+    "youth.desc": "Dynamic activities to shape the next generation of leaders.",
+    "men": "Men's Ministry",
+    "men.desc": "Gatherings to strengthen men in their role as spiritual leaders.",
+    "women": "Women's Ministry",
+    "women.desc": "A space of encouragement and growth for the women of the church.",
+    "music": "Worship Ministry",
+    "music.desc": "Worship at the heart of our church, with a team of dedicated musicians and singers.",
+    "mission": "Mission and Evangelism",
+    "mission.desc": "Sharing God's love through local and international missionary work."
+  },
+  "sermons": {
+    "pastor": "Preacher",
+    "duration": "Duration",
+    "category": "Category",
+    "watch": "Watch",
+    "all": "All sermons",
+    "sort": {
+      "label": "Sort by:",
+      "dateDesc": "Date (newest)",
+      "dateAsc": "Date (oldest)",
+      "titleAsc": "Title (A-Z)",
+      "titleDesc": "Title (Z-A)",
+      "pastorAsc": "Pastor (A-Z)",
+      "pastorDesc": "Pastor (Z-A)"
+    },
+    "filter": {
+      "all": "All",
+      "sunday": "Sunday",
+      "study": "Bible Study",
+      "conference": "Conference",
+      "youth": "Youth"
+    },
+    "categories": { "culte": "Worship", "enseignement": "Teaching", "jeunesse": "Youth" },
+    "videos": { "title": "Sermon Videos" },
+    "item1": { "title": "The Power of Faith", "pastor": "Pastor Amadou", "duration": "45 min" },
+    "item2": { "title": "Living in God's Peace", "pastor": "Pastor Samuel Tchétché", "duration": "38 min" },
+    "item3": { "title": "Hope that does not disappoint", "pastor": "Pastor David Yacoubou", "duration": "42 min" },
+    "item4": { "title": "The Grace of God", "pastor": "Pastor Amadou", "duration": "50 min" },
+    "item5": { "title": "The Prayer that Touches God's Heart", "pastor": "Pastor Samuel Tchétché", "duration": "35 min" },
+    "item6": { "title": "God's Love for Us", "pastor": "Pastor David Yacoubou", "duration": "40 min" },
+    "video1": { "title": "Sermon: Faith in Action", "pastor": "Pastor Amadou" },
+    "video2": { "title": "Sermon: Rest in God", "pastor": "Pastor Samuel Tchétché" },
+    "video3": { "title": "Sermon: A Grateful Heart", "pastor": "Pastor David Yacoubou" }
+  },
+  "gallery": {
+    "photos": "Photos",
+    "videos": "Videos",
+    "watch": "Watch",
+    "filter": { "all": "All", "cultes": "Worship Services", "evenements": "Events", "jeunesse": "Youth", "baptemes": "Baptisms" },
+    "item1": { "label": "Sunday Worship - March 2025" },
+    "item2": { "label": "Youth Conference 2025" },
+    "item3": { "label": "Baptism at the Niger River" },
+    "item4": { "label": "Praise Evening" },
+    "item5": { "label": "Leadership Seminar" },
+    "item6": { "label": "Missionary Visit" },
+    "video1": { "title": "Best praise moment", "desc": "Excerpt from Sunday worship" },
+    "video2": { "title": "Testimony: a transformed life", "desc": "Sister Marie shares her story" },
+    "video3": { "title": "Teaching on Prayer", "desc": "Pastor Samuel Tchétché" },
+    "video4": { "title": "Youth Conference 2025", "desc": "Highlights of the conference" }
+  },
+  "blog": {
+    "readMore": "Read more",
+    "author": "Author",
+    "status": { "published": "Published", "draft": "Draft" },
+    "categories": {
+      "title": "Categories",
+      "event": "Events",
+      "teaching": "Teachings",
+      "meditation": "Meditations",
+      "testimony": "Testimonies",
+      "announcement": "Announcements"
+    },
+    "recent": { "title": "Recent Articles" },
+    "subscribe": {
+      "title": "Newsletter",
+      "text": "Receive our latest posts by email.",
+      "placeholder": "Your email address",
+      "btn": "Subscribe"
+    },
+    "posts": {
+      "1": { "title": "Youth Conference \"Generation Impact\"", "tag": "Event", "excerpt": "A large gathering of youth with inspiring teachings, workshops, and times of praise.", "author": "Pastor Amadou", "date": "March 12, 2025" },
+      "2": { "title": "The Importance of Morning Prayer", "tag": "Teaching", "excerpt": "Discover why morning prayer can transform your day and your relationship with God.", "author": "Pastor Samuel Tchétché", "date": "February 28, 2025" },
+      "3": { "title": "Our Mission in Niger", "tag": "Testimony", "excerpt": "A report from our missionaries on the impact of the Gospel in remote regions of Niger.", "author": "Pastor David Yacoubou", "date": "February 15, 2025" }
+    }
+  },
+  "events": {
+    "location": "Location",
+    "more": "More info",
+    "status": { "published": "Published", "draft": "Draft" },
+    "month": { "may": "May 2026" },
+    "calendar": { "title": "Events Calendar" },
+    "legend": { "cultes": "Services", "mediations": "Meditations", "louange": "Praise", "baptemes": "Baptisms" },
+    "daily": { "title": "Morning Meditation", "sub": "Every day, 6:00 AM - 7:00 AM" },
+    "list": {
+      "title": "Upcoming Events",
+      "1": { "title": "Youth Conference Generation Impact", "tag": "Youth", "desc": "A large gathering of youth with inspiring teachings, workshops, and times of praise." },
+      "2": { "title": "Morning Meditation", "tag": "Daily", "desc": "Join us every morning for a time of prayer and meditation on the Word." },
+      "3": { "title": "Community Baptism", "tag": "Baptism", "desc": "Registration is open for the next baptism at the Niger River." },
+      "4": { "title": "Night of Praise", "tag": "Praise", "desc": "A special evening of praise and worship.", "location": "At the church" }
+    }
+  },
+  "contact": {
+    "title": "Write to us",
+    "name": "Name",
+    "email": { "title": "Email" },
+    "subject": "Subject",
+    "message": "Message",
+    "send": "Send",
+    "desc": "Do you have a question, a prayer request, or would you like more information? Fill out the form below.",
+    "coords": "Our Contact Information",
+    "success": "Message sent successfully. We will get back to you soon.",
+    "phone": { "title": "Phone" },
+    "address": { "title": "Our Address", "line1": "Yantala Haut District, Niamey", "line2": "Assemblies of God Street", "line3": "PO Box: 12345 Niamey, Niger" },
+    "map": { "title": "Find us", "text": "Niamey, Niger - Plateau District", "link": "View on Google Maps" },
+    "prayer": {
+      "title": "Submit a Prayer Request",
+      "subtitle": "Our intercession team will pray for you. All requests remain confidential.",
+      "subject": "Type of request",
+      "subjectPlaceholder": "Choose a subject",
+      "subject1": "Healing",
+      "subject2": "Financial Situation",
+      "subject3": "Family and Marriage",
+      "subject4": "Work and Career",
+      "subject5": "Other",
+      "message": "Your prayer request",
+      "send": "Send my prayer request",
+      "name": "Your first name (or anonymous)",
+      "namePlaceholder": "Your first name",
+      "placeholder": "Write your prayer request here...",
+      "commitment": "Our Commitment",
+      "commit1": { "title": "Daily Prayer", "desc": "Our team prays for every request received each day." },
+      "commit2": { "title": "Friday Intercession", "desc": "Every Friday, our intercession meeting brings your requests before God's throne." },
+      "commit3": { "title": "Total Confidentiality", "desc": "Your requests remain strictly confidential between you and our prayer team." },
+      "verse": "\"Do not be anxious about anything, but in every situation, by prayer and petition, with thanksgiving, present your requests to God.\"",
+      "verseRef": "— Philippians 4:6"
+    },
+    "success": {
+      "title": "Message Sent!",
+      "text": "Your message has been sent successfully. We will get back to you as soon as possible.",
+      "btn": "Close"
+    }
+  },
+  "footer": {
+    "rights": "All rights reserved.",
+    "quickLinks": "Quick links",
+    "schedule": "Schedule",
+    "contact": "Contact",
+    "sunday": "Sunday",
+    "wednesday": "Wednesday",
+    "friday": "Friday",
+    "address": "Niamey, Niger",
+    "email": "contact@adniamey2000.org",
+    "phone": "+227 00 00 00 00",
+    "legal": "Legal notice",
+    "privacy": "Privacy policy",
+    "adminLink": "Admin"
+  },
+  "social": {
+    "facebook": "Facebook",
+    "youtube": "YouTube",
+    "whatsapp": "WhatsApp"
+  },
+  "ministere": {
+    "page": { "title": "Our Ministry - AD Niamey 2000 | Pastors and Teams" }
+  },
+  "legal": {
+    "page": { "title": "Legal Notice - AD Niamey 2000" }
+  },
+  "privacy": {
+    "page": { "title": "Privacy Policy - AD Niamey 2000" }
+  },
+  "error": {
+    "page": { "title": "404 - Page Not Found | AD Niamey 2000" }
+  },
+  "_404": {
+    "title": "Page not found",
+    "text": "Sorry, the page you are looking for does not exist or has been moved.",
+    "cta": "Back to home"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "viewAll": "View all",
+    "lightMode": "Light mode",
+    "darkMode": "Dark mode",
+    "backToTop": "Back to top",
+    "cookieBanner": "This site uses cookies to improve your experience.",
+    "cookieAccept": "Accept",
+    "cookieDecline": "Decline",
+    "languages": "Languages",
+    "close": "Close",
+    "minutes": "min",
+    "download": "Download"
+  }
+};

@@ -1,0 +1,298 @@
+(function () {
+  'use strict';
+
+  document.addEventListener('DOMContentLoaded', function () {
+    var page = window.location.pathname.split('/').pop() || 'index.html';
+
+    if (page === 'evenements.html') loadEvents();
+    if (page === 'galerie.html') loadGallery();
+    loadSiteData();
+  });
+
+  function lang() {
+    return typeof window.currentLang === 'function' ? window.currentLang() : 'fr';
+  }
+  function esc(t) {
+    if (!t) return '';
+    var d = document.createElement('div');
+    d.appendChild(document.createTextNode(t));
+    return d.innerHTML;
+  }
+  function tr(item, field) {
+    var v = item[field + '_' + lang()] || item[field + '_fr'] || '';
+    return v;
+  }
+  function gradients(name) {
+    var m = {
+      'from-purple-600 to-blue-600': 'linear-gradient(135deg,#9333ea,#2563eb)',
+      'from-green-500 to-teal-600': 'linear-gradient(135deg,#22c55e,#0d9488)',
+      'from-blue-500 to-cyan-600': 'linear-gradient(135deg,#3b82f6,#0891b2)',
+      'from-orange-500 to-red-600': 'linear-gradient(135deg,#f97316,#dc2626)',
+      'from-yellow-500 to-orange-600': 'linear-gradient(135deg,#eab308,#ea580c)',
+      'from-red-500 to-pink-600': 'linear-gradient(135deg,#ef4444,#db2777)',
+      'from-indigo-500 to-purple-600': 'linear-gradient(135deg,#6366f1,#9333ea)',
+      'from-pink-500 to-rose-600': 'linear-gradient(135deg,#ec4899,#e11d48)',
+      'from-blue-800 to-blue-900': 'linear-gradient(135deg,#1e3a8a,#172554)',
+      'from-blue-700 to-blue-900': 'linear-gradient(135deg,#1d4ed8,#172554)',
+      'from-blue-600 to-blue-800': 'linear-gradient(135deg,#2563eb,#1e3a8a)',
+      'from-blue-500 to-blue-700': 'linear-gradient(135deg,#3b82f6,#1d4ed8)',
+    };
+    return m[name] || 'linear-gradient(135deg,#1e3a8a,#172554)';
+  }
+
+
+
+
+
+
+
+
+
+  // ===== EVENTS PAGE =====
+  function loadEvents() {
+    var container = document.querySelector('#events-list');
+    if (!container || !window.api) return;
+    window.api.getEvents().then(function (data) {
+      if (!data || !data.length) return;
+      var upcoming = data.filter(function (e) { return e.status === 'upcoming'; });
+      container.innerHTML = upcoming.map(function (e) {
+        var t = tr(e, 'title');
+        var d = tr(e, 'description');
+        var loc = tr(e, 'location');
+        var date = e.date || '';
+        var parts = date.split('-');
+        var day = parts[2] || '??';
+        var monthNum = parseInt(parts[1], 10) || 1;
+        var months = ['Jan', 'Fév', 'Mar', 'Avr', 'Mai', 'Juin', 'Juil', 'Aoû', 'Sep', 'Oct', 'Nov', 'Déc'];
+        var month = months[monthNum - 1] || '???';
+        var tagColors = ['blue', 'green', 'orange', 'purple'];
+        var tagColor = tagColors[Math.floor(Math.random() * tagColors.length)];
+        return (
+          '<div class="event-card">' +
+          '<div class="event-date-box">' +
+          '<div class="day">' + day + '</div>' +
+          '<div class="month">' + month + '</div>' +
+          '</div>' +
+          '<div class="event-info">' +
+          '<h3>' + esc(t) + '</h3>' +
+          '<div class="event-meta">' +
+          '<span><svg fill="none" stroke="currentColor" viewBox="0 0 24 24" width="14" height="14"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg> ' + esc(loc) + '</span>' +
+          '</div>' +
+          '<p>' + esc(d).slice(0, 150) + '…</p>' +
+          '<span class="event-tag ' + tagColor + '">' + esc(e.status) + '</span>' +
+          '</div>' +
+          '</div>'
+        );
+      }).join('');
+    });
+  }
+
+  // ===== GALLERY PAGE =====
+  function loadGallery() {
+    var grid = document.querySelector('#gallery-grid');
+    if (!grid || !window.api) return;
+    window.api.getGallery().then(function (data) {
+      if (!data || !data.length) return;
+      grid.innerHTML = data.map(function (g) {
+        var cap = tr(g, 'caption');
+        var cat = esc(g.category || '');
+        var grad = gradients(g.gradient);
+        return (
+          '<div class="gallery-item ' + cat + '" style="background-image:' + grad + ';background-size:cover;background-position:center">' +
+          '<div class="gallery-pattern"></div>' +
+          '<div class="gallery-overlay"><span>' + esc(cap) + '</span></div>' +
+          '</div>'
+        );
+      }).join('');
+      rewireLightbox();
+    });
+  }
+
+
+
+  function rewireLightbox() {
+    var lightbox = document.getElementById('lightbox');
+    var lightboxContent = document.getElementById('lightbox-content');
+    if (!lightbox || !lightboxContent) return;
+    document.querySelectorAll('.gallery-item').forEach(function (item) {
+      item.addEventListener('click', function () {
+        var clone = item.cloneNode(true);
+        clone.style.cursor = 'default';
+        var overlay = clone.querySelector('.gallery-overlay');
+        if (overlay) overlay.style.opacity = '1';
+        lightboxContent.innerHTML = '';
+        lightboxContent.appendChild(clone);
+        lightbox.classList.add('show');
+        document.body.style.overflow = 'hidden';
+      });
+    });
+  }
+
+
+
+  // ===== SITE DATA (all pages) =====
+  function loadSiteData() {
+    if (!window.api) return;
+    window.api.getSiteData().then(function(data) {
+      if (!data) return;
+
+      var testimonialGrid = document.querySelector('#testimonials-grid');
+      if (testimonialGrid && data.testimonials && data.testimonials.length) {
+        testimonialGrid.innerHTML = data.testimonials.map(function(t) {
+          return '<div class="card-horaire" style="padding:2rem;text-align:center;background:var(--white);border-radius:1rem;box-shadow:var(--shadow-md)">' +
+            '<p style="font-style:italic;color:var(--gray-600);margin-bottom:1rem;line-height:1.6">"' + esc(tr(t, 'content')) + '"</p>' +
+            '<p style="font-weight:600;color:var(--blue-900)">' + esc(t.author) + '</p>' +
+            (t['role_' + lang()] ? '<p style="font-size:0.8rem;color:var(--gray-500)">' + esc(t['role_' + lang()]) + '</p>' : '') +
+          '</div>';
+        }).join('');
+      }
+
+      var scheduleGrid = document.querySelector('#schedules-grid');
+      if (scheduleGrid && data.schedules && data.schedules.length) {
+        scheduleGrid.innerHTML = data.schedules.map(function(s) {
+          return '<div class="card-horaire" style="text-align:center;padding:2rem">' +
+            '<div class="horaire-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6l4 2m6-2a10 10 0 11-20 0 10 10 0 0120 0z"/></svg></div>' +
+            '<h3 class="horaire-name">' + esc(tr(s, 'label')) + '</h3>' +
+            '<p class="horaire-day">' + esc(tr(s, 'day')) + '</p>' +
+            '<p class="horaire-time">' + esc(s.time_start) + ' - ' + esc(s.time_end) + '</p>' +
+          '</div>';
+        }).join('');
+      }
+
+      var statsGrid = document.querySelector('#stats-grid');
+      if (statsGrid && data.stats && data.stats.length) {
+        statsGrid.innerHTML = data.stats.map(function(s) {
+          return '<div style="text-align:center">' +
+            '<div class="stat-number">' + esc(s.value_text) + esc(s.suffix || '') + '</div>' +
+            '<div class="stat-label">' + esc(tr(s, 'label')) + '</div>' +
+          '</div>';
+        }).join('');
+      }
+
+      var historyContent = document.querySelector('#history-content');
+      if (historyContent && data.history && data.history.length) {
+        historyContent.innerHTML = data.history.map(function(h) {
+          var paragraphs = (tr(h, 'content') || '').split('\n').filter(function(p) { return p.trim(); });
+          return '<div class="mb-8">' +
+            (h.section ? '<h3 style="font-family:\'Playfair Display\',serif;font-size:1.5rem;font-weight:700;color:var(--blue-900);margin-bottom:1rem">' + esc(h.section) + '</h3>' : '') +
+            paragraphs.map(function(p) { return '<p style="color:var(--gray-600);margin-bottom:1rem;line-height:1.7">' + esc(p) + '</p>'; }).join('') +
+          '</div>';
+        }).join('');
+      }
+
+      var doctrineGrid = document.querySelector('#doctrine-grid');
+      if (doctrineGrid && data.doctrine && data.doctrine.length) {
+        doctrineGrid.innerHTML = data.doctrine.map(function(d) {
+          return '<div class="doctrine-card">' +
+            '<div class="doctrine-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v12m6-6H6"/></svg></div>' +
+            '<h3>' + esc(tr(d, 'title')) + '</h3>' +
+            '<p>' + esc(tr(d, 'content')) + '</p>' +
+          '</div>';
+        }).join('');
+      }
+
+      var ministriesGrid = document.querySelector('#ministries-grid');
+      if (ministriesGrid && data.ministries && data.ministries.length) {
+        ministriesGrid.innerHTML = data.ministries.map(function(m) {
+          return '<div class="card-horaire" style="padding:2rem;text-align:center;background:var(--white);border-radius:1rem;box-shadow:var(--shadow-md)">' +
+            '<div class="doctrine-icon" style="margin:0 auto 1rem"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21l-7-5-7 5V5a2 2 0 012-2h10a2 2 0 012 2v16z"/></svg></div>' +
+            '<h3 style="font-family:\'Playfair Display\',serif;font-size:1.125rem;font-weight:600;color:var(--blue-900);margin-bottom:.25rem">' + esc(tr(m, 'name')) + '</h3>' +
+            '<p style="font-size:.85rem;color:var(--gray-500);margin-bottom:1rem">' + esc(m.leader || '') + '</p>' +
+            '<p style="font-size:.875rem;color:var(--gray-600)">' + esc(tr(m, 'description')) + '</p>' +
+          '</div>';
+        }).join('');
+      }
+
+      var contactList = document.querySelector('#contact-details-list');
+      if (contactList && data.contacts && data.contacts.length) {
+        contactList.innerHTML = data.contacts.map(function(c) {
+          return '<div class="contact-item">' +
+            '<div class="contact-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="' + getContactIcon(c.type) + '"/></svg></div>' +
+            '<div>' +
+            '<h3>' + esc(tr(c, 'label')) + '</h3>' +
+            (c.type === 'email' ? '<a href="mailto:' + esc(c.value) + '">' + esc(c.value) + '</a>' :
+             c.type === 'phone' ? '<a href="tel:' + esc(c.value) + '">' + esc(c.value) + '</a>' :
+             '<p>' + esc(c.value) + '</p>') +
+          '</div></div>';
+        }).join('');
+      }
+
+      if (data.settings) {
+        var s = data.settings;
+        var heroBadge = document.querySelector('#hero-badge');
+        if (heroBadge && s.hero_badge) heroBadge.textContent = s.hero_badge;
+        var heroDesc = document.querySelector('#hero-desc');
+        if (heroDesc && s.hero_description) heroDesc.textContent = s.hero_description;
+
+        setText('#stats-heading', s.stats_heading);
+        setText('#testimonials-heading', s.testimonials_heading);
+        setText('#donation-heading', s.donation_heading);
+        setText('#donation-subtitle', s.donation_subtitle);
+        setText('#donation-verse', s.donation_verse);
+        setText('#donation-verse-ref', s.donation_verse_ref);
+        setText('#schedule-heading', s.schedule_heading);
+        setText('#schedule-subtitle', s.schedule_subtitle);
+        setText('#welcome-heading', s.welcome_heading);
+        setText('#welcome-text', s.welcome_text);
+        setText('#prayer-title', s.prayer_title);
+        setText('#prayer-subtitle', s.prayer_subtitle);
+        setText('#prayer-verse', s.prayer_verse);
+        setText('#prayer-verse-ref', s.prayer_verse_ref);
+        setText('#contact-heading', s.contact_heading);
+        setText('#contact-subtitle', s.contact_subtitle);
+        setText('#commitment-heading', s.commitment_heading);
+        setText('#commitment-subtitle', s.commitment_subtitle);
+      }
+
+      var socialContainer = document.querySelector('#social-links-container');
+      if (socialContainer && data.social && data.social.length) {
+        socialContainer.innerHTML = data.social.map(function(s) {
+          var ariaLabel = s.platform || 'Social';
+          return '<a href="' + esc(s.url) + '" aria-label="' + ariaLabel + '" target="_blank" rel="noopener">' +
+            (s.icon_svg || '<svg fill="currentColor" viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10"/></svg>') +
+          '</a>';
+        }).join('');
+      }
+
+
+
+      var donationGrid = document.querySelector('#donation-grid');
+      if (donationGrid && data.donations && data.donations.length) {
+        donationGrid.innerHTML = data.donations.map(function(d) {
+          return '<div class="don-card">' +
+            '<div class="don-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"/></svg></div>' +
+            '<h3>' + esc(d.method) + '</h3>' +
+            '<p>' + esc(d.number) + '</p>' +
+          '</div>';
+        }).join('');
+      }
+    });
+  }
+
+  function setText(id, val) {
+    if (!val) return;
+    var el = document.querySelector(id);
+    if (el) el.textContent = val;
+  }
+
+  function getContactIcon(type) {
+    if (type === 'email') return 'M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z';
+    if (type === 'phone') return 'M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z';
+    return 'M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z';
+  }
+
+  document.addEventListener('dataChanged', function(e) {
+    if (!e.detail) return;
+    var type = e.detail.type;
+    if (type === 'site') {
+      loadSiteData();
+    }
+    if (type === 'events') {
+      loadEvents();
+    }
+    if (type === 'gallery') {
+      loadGallery();
+    }
+  });
+
+})();
