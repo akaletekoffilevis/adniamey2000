@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Connexion Admin - AD Niamey 2000</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+
+  <link rel="stylesheet" href="../css/style.min.css">
+</head>
+<body>
+<div class="admin-login">
+  <div class="admin-login-box">
+    <div class="logo">
+      <svg viewBox="0 0 100 100" fill="currentColor"><path d="M50 10 L60 40 L90 40 L65 60 L75 90 L50 70 L25 90 L35 60 L10 40 L40 40 Z"/></svg>
+      <h1>AD Niamey 2000</h1>
+      <p>Administration</p>
+    </div>
+    <form id="login-form">
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" placeholder="contact@adniamey2000.org" required>
+      </div>
+      <div class="form-group">
+        <label for="password">Mot de passe</label>
+        <input type="password" id="password" placeholder="Mot de passe" required>
+      </div>
+      <p id="login-error" style="color:var(--red-600);font-size:0.85rem;text-align:center;display:none"></p>
+      <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center">Se connecter</button>
+      <p style="text-align:center;margin-top:1rem;font-size:.8rem;color:var(--gray-500)"><a href="../index.html" style="color:var(--blue-700)">← Retour au site</a></p>
+    </form>
+  </div>
+</div>
+<script>
+document.getElementById('login-form').addEventListener('submit', function(e) {
+  e.preventDefault();
+  var email = document.getElementById('email').value;
+  var pass = document.getElementById('password').value;
+  var msg = document.getElementById('login-error');
+  fetch('http://localhost:3001/api/auth/login', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ email: email, password: pass })
+  }).then(function(r) { return r.json(); }).then(function(data) {
+    if (data.token) {
+      sessionStorage.setItem('admin_token', data.token);
+      sessionStorage.setItem('admin_user', JSON.stringify(data.user));
+      window.location = 'index.html';
+    } else {
+      msg.textContent = data.error || 'Identifiants incorrects';
+      msg.style.display = 'block';
+    }
+  }).catch(function() {
+    msg.textContent = 'Erreur de connexion au serveur';
+    msg.style.display = 'block';
+  });
+});
+</script>
+</body>
+</html>

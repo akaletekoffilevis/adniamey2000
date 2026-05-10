@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-i18n="legal.page.title">Mentions Légales - AD Niamey 2000</title>
+  <meta name="description" content="Mentions légales du site internet de l'AD Niamey 2000 - Assemblées de Dieu au Niger.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://adniamey2000.org/frontend/mentions-legales.html">
+  <meta property="og:title" content="Mentions Légales - AD Niamey 2000">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://adniamey2000.org/frontend/mentions-legales.html">
+  <meta property="og:description" content="Mentions légales du site internet de l'AD Niamey 2000 - Assemblées de Dieu au Niger.">
+  <meta property="og:locale" content="fr_FR">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Mentions Légales - AD Niamey 2000">
+  <meta name="twitter:description" content="Mentions légales du site internet de l'AD Niamey 2000 - Assemblées de Dieu au Niger.">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="alternate" hreflang="fr" href="https://adniamey2000.org/frontend/mentions-legales.html">
+  <link rel="alternate" hreflang="en" href="https://adniamey2000.org/frontend/mentions-legales.html">
+  <link rel="alternate" hreflang="ha" href="https://adniamey2000.org/frontend/mentions-legales.html">
+  <link rel="alternate" hreflang="it" href="https://adniamey2000.org/frontend/mentions-legales.html">
+  <link rel="alternate" hreflang="x-default" href="https://adniamey2000.org/frontend/mentions-legales.html">
+
+  <link rel="stylesheet" href="css/style.min.css">
+</head>
+<body>
+
+<nav class="navbar" role="navigation" aria-label="Navigation principale">
+  <div class="navbar-inner">
+    <a href="index.html" class="navbar-logo" aria-label="AD Niamey 2000 - Accueil">
+      <svg viewBox="0 0 100 100" fill="currentColor" aria-hidden="true"><path d="M50 10 L60 40 L90 40 L65 60 L75 90 L50 70 L25 90 L35 60 L10 40 L40 40 Z"/></svg>
+      <span data-i18n="church.name">AD Niamey 2000</span>
+    </a>
+    <div class="navbar-links">
+      <a href="index.html" data-i18n="nav.home">Accueil</a>
+      <a href="a-propos.html" data-i18n="nav.about">À propos</a>
+      <a href="pasteurs.html" data-i18n="nav.ministry">Ministère</a>
+      <a href="evenements.html" data-i18n="nav.events">Événements</a>
+      <a href="galerie.html" data-i18n="nav.gallery">Galerie</a>
+      <a href="contact.html" data-i18n="nav.contact">Contact</a>
+      <a href="contact.html#don" class="btn btn-primary" style="padding:0.625rem 1.25rem" data-i18n="nav.donate">Faire un don</a>
+      <a href="admin/login.html" class="navbar-admin-link" data-i18n="nav.admin">Admin</a>
+      <select class="lang-select" onchange="switchLang(this.value)">
+        <option value="fr">🇫🇷 FR</option>
+        <option value="en">🇬🇧 EN</option>
+        <option value="ha">🇳🇪 HA</option>
+        <option value="it">🇮🇹 IT</option>
+      </select>
+    </div>
+    <button class="menu-btn" id="menu-btn" aria-label="Ouvrir le menu" aria-expanded="false">
+      <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+    </button>
+  </div>
+    <div class="mobile-menu" id="mobile-menu" role="navigation" aria-label="Navigation mobile">
+      <div class="mobile-menu-header">
+        <a href="index.html" class="mobile-logo" aria-label="AD Niamey 2000 - Accueil">
+          <svg viewBox="0 0 100 100" fill="currentColor" aria-hidden="true"><path d="M50 10 L60 40 L90 40 L65 60 L75 90 L50 70 L25 90 L35 60 L10 40 L40 40 Z"/></svg>
+          <span data-i18n="church.name">AD Niamey 2000</span>
+        </a>
+        <button class="mobile-menu-close" id="mobile-menu-close" aria-label="Fermer le menu">&times;</button>
+      </div>
+      <div class="mobile-menu-links">
+        <a href="index.html" data-i18n="nav.home">Accueil</a>
+        <a href="a-propos.html" data-i18n="nav.about">À propos</a>
+        <a href="pasteurs.html" data-i18n="nav.ministry">Ministère</a>
+        <a href="evenements.html" data-i18n="nav.events">Événements</a>
+        <a href="galerie.html" data-i18n="nav.gallery">Galerie</a>
+        <a href="contact.html" data-i18n="nav.contact">Contact</a>
+        <a href="contact.html#don" class="btn btn-primary" style="text-align:center;width:100%;margin-top:0.5rem" data-i18n="nav.donate">Faire un don</a>
+      </div>
+      <div class="mobile-menu-footer">
+        <a href="admin/" class="admin-link" data-i18n="nav.admin">Admin</a>
+        <select class="lang-select" onchange="switchLang(this.value)">
+          <option value="fr">🇫🇷 FR</option>
+          <option value="en">🇬🇧 EN</option>
+          <option value="ha">🇳🇪 HA</option>
+          <option value="it">🇮🇹 IT</option>
+        </select>
+      </div>
+    </div>
+</nav>
+
+<div class="mobile-menu-overlay" id="mobile-overlay"></div>
+
+<main>
+  <section class="hero hero-page" aria-label="Mentions légales">
+    <div class="hero-bg" aria-hidden="true">
+      <svg viewBox="0 0 1440 800" preserveAspectRatio="xMidYMid slice">
+        <circle cx="400" cy="300" r="250" fill="white"/><circle cx="1100" cy="500" r="200" fill="white"/>
+      </svg>
+    </div>
+    <div class="hero-content">
+      <h1 class="hero-title">Mentions Légales</h1>
+      <p class="hero-subtitle">Conformément aux dispositions de la loi n° 2004-575 du 21 juin 2004 pour la confiance dans l'économie numérique.</p>
+    </div>
+  </section>
+
+  <section class="section" aria-label="Contenu légal">
+    <div class="container" style="max-width:48rem">
+      <div style="color:var(--gray-600);line-height:1.8">
+        <h2 style="font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:700;color:var(--blue-900);margin-top:2rem;margin-bottom:1rem">Éditeur du site</h2>
+        <p><strong>AD Niamey 2000</strong><br>Assemblées de Dieu au Niger<br>Niamey, Niger</p>
+        <p style="margin-top:0.75rem">Email : <a href="mailto:contact@adniamey2000.org" style="color:var(--blue-700)">contact@adniamey2000.org</a><br>Téléphone : <a href="tel:+22700000000" style="color:var(--blue-700)">+227 00 00 00 00</a></p>
+
+        <h2 style="font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:700;color:var(--blue-900);margin-top:2rem;margin-bottom:1rem">Directeur de la publication</h2>
+        <p>Le Directeur de la publication est le Pasteur Principal de l'AD Niamey 2000.</p>
+
+        <h2 style="font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:700;color:var(--blue-900);margin-top:2rem;margin-bottom:1rem">Hébergement</h2>
+        <p>Ce site est hébergé par les serveurs de l'AD Niamey 2000.<br>Niamey, Niger.</p>
+
+        <h2 style="font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:700;color:var(--blue-900);margin-top:2rem;margin-bottom:1rem">Propriété intellectuelle</h2>
+        <p>L'ensemble du contenu de ce site (textes, images, vidéos, logos, etc.) est la propriété exclusive de l'AD Niamey 2000, sauf mention contraire. Toute reproduction, distribution, modification ou utilisation de ces contenus sans autorisation préalable est interdite.</p>
+        <p style="margin-top:0.75rem">Les marques et logos figurant sur ce site sont des marques déposées. Leur utilisation sans autorisation préalable est strictement interdite.</p>
+
+        <h2 style="font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:700;color:var(--blue-900);margin-top:2rem;margin-bottom:1rem">Protection des données</h2>
+        <p>Conformément au Règlement Général sur la Protection des Données (RGPD) et à la loi Informatique et Libertés, vous disposez d'un droit d'accès, de rectification et de suppression des données vous concernant.</p>
+        <p style="margin-top:0.75rem">Pour exercer ces droits, veuillez nous contacter à : <a href="mailto:contact@adniamey2000.org" style="color:var(--blue-700)">contact@adniamey2000.org</a></p>
+        <p style="margin-top:0.75rem">Pour plus d'informations, consultez notre <a href="politique-confidentialite.html" style="color:var(--blue-700)">Politique de confidentialité</a>.</p>
+
+        <h2 style="font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:700;color:var(--blue-900);margin-top:2rem;margin-bottom:1rem">Cookies</h2>
+        <p>Ce site utilise des cookies pour améliorer l'expérience utilisateur. En naviguant sur ce site, vous acceptez l'utilisation de cookies conformément à notre politique de confidentialité.</p>
+
+        <h2 style="font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:700;color:var(--blue-900);margin-top:2rem;margin-bottom:1rem">Contact</h2>
+        <p>Pour toute question concernant ces mentions légales, vous pouvez nous contacter :</p>
+        <ul style="list-style:disc;padding-left:1.5rem;margin-top:0.5rem">
+          <li>Par email : <a href="mailto:contact@adniamey2000.org" style="color:var(--blue-700)">contact@adniamey2000.org</a></li>
+          <li>Par téléphone : <a href="tel:+22700000000" style="color:var(--blue-700)">+227 00 00 00 00</a></li>
+          <li>Via le formulaire de contact : <a href="contact.html" style="color:var(--blue-700)">page contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer" role="contentinfo">
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:0.75rem">
+          <svg viewBox="0 0 100 100" fill="currentColor" aria-hidden="true"><path d="M50 10 L60 40 L90 40 L65 60 L75 90 L50 70 L25 90 L35 60 L10 40 L40 40 Z"/></svg>
+          <span data-i18n="church.name">AD Niamey 2000</span>
+        </div>
+        <p data-i18n="church.desc">Assemblées de Dieu au Niger. Une famille de foi où chacun est le bienvenu.</p>
+      </div>
+      <div>
+        <h3 data-i18n="footer.quickLinks">Liens rapides</h3>
+        <ul>
+          <li><a href="index.html" data-i18n="nav.home">Accueil</a></li>
+          <li><a href="a-propos.html" data-i18n="nav.about">À propos</a></li>
+          <li><a href="pasteurs.html" data-i18n="nav.ministry">Ministère</a></li>
+          <li><a href="galerie.html" data-i18n="nav.gallery">Galerie</a></li>
+          <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
+          <li><a href="mentions-legales.html" data-i18n="footer.legal">Mentions légales</a></li>
+          <li><a href="politique-confidentialite.html" data-i18n="footer.privacy">Politique de confidentialité</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 data-i18n="footer.schedule">Horaires</h3>
+        <ul style="font-size:0.875rem;color:var(--gray-400)">
+          <li><span style="color:var(--white);font-weight:500" data-i18n="footer.sunday">Dimanche :</span> 09h00 - 12h00</li>
+          <li><span style="color:var(--white);font-weight:500" data-i18n="footer.wednesday">Mercredi :</span> 17h30 - 19h00</li>
+          <li><span style="color:var(--white);font-weight:500" data-i18n="footer.friday">Vendredi :</span> 17h30 - 19h00</li>
+        </ul>
+      </div>
+      <div>
+        <h3 data-i18n="footer.contact">Contact</h3>
+        <ul class="footer-contact">
+          <li><svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg><span data-i18n="footer.address">Niamey, Niger</span></li>
+          <li><svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg><a href="mailto:contact@adniamey2000.org" data-i18n="footer.email">contact@adniamey2000.org</a></li>
+          <li><svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg><a href="tel:+22700000000" data-i18n="footer.phone">+227 00 00 00 00</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; <span id="copyright-year">2025</span> AD Niamey 2000. <span data-i18n="footer.rights">Tous droits réservés.</span></p>
+      <div id="social-links-container" class="social-links">
+        <a href="#" aria-label="Facebook"><svg fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+        <a href="#" aria-label="YouTube"><svg fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+        <a href="#" aria-label="WhatsApp"><svg fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a><a href="admin/login.html" class="footer-admin-btn" data-i18n="nav.admin">Admin</a></div>
+    </div>
+  </div>
+</footer>
+
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lightbox-close">&times;</button>
+  <div class="lightbox-content" id="lightbox-content"></div>
+</div>
+
+<button class="back-to-top" id="back-to-top" aria-label="Retour en haut">
+  <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"/></svg>
+</button>
+
+<div class="cookie-consent" id="cookie-consent">
+  <div class="cookie-inner">
+    <p class="cookie-text" data-i18n="common.cookieBanner">Ce site utilise des cookies pour améliorer votre expérience. <a href="politique-confidentialite.html">En savoir plus</a></p>
+    <div class="cookie-btns">
+      <button class="cookie-btn accept" data-i18n="common.cookieAccept">Accepter</button>
+      <button class="cookie-btn decline" data-i18n="common.cookieDecline">Refuser</button>
+    </div>
+  </div>
+</div>
+
+<script src="js/i18n.js"></script>
+<script src="js/api.js"></script>
+<script src="js/script.min.js"></script>
+<script src="js/dynamic.min.js"></script>
+</body>
+</html>

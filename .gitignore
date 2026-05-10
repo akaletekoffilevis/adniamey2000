@@ -1,9 +1,10 @@
 *.md
 !README.md
 node_modules/
-backend/database/*.db
-backend/database/*.db-shm
-backend/database/*.db-wal
-backend/uploads/
+public/node_modules/
+database/*.db
+database/*.db-shm
+database/*.db-wal
+uploads/
 .env
 .env.*

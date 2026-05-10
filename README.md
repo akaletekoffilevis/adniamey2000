@@ -80,7 +80,6 @@ npx serve .
 ## Fonctionnalités
 
 - **Multilingue** : FR/EN/HA/IT avec bascule en direct (sans rechargement)
-- **Thème clair/sombre** : avec persistance localStorage + détection système
 - **Lightbox** : pour la galerie photos
 - **Admin** : panneau de gestion avec authentification JWT
 - **PWA** : service worker avec cache offline
