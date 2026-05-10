@@ -2,6 +2,7 @@ module.exports = async function(fastify) {
   const { db } = fastify;
 
   const contactSchema = {
+    tags: ['Contact'],
     body: {
       type: 'object',
       required: ['name', 'email', 'message'],
@@ -15,6 +16,7 @@ module.exports = async function(fastify) {
   };
 
   const prayerSchema = {
+    tags: ['Contact'],
     body: {
       type: 'object',
       required: ['request'],

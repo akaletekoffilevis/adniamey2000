@@ -5,6 +5,7 @@ module.exports = async function(fastify) {
   const { db } = fastify;
 
   const loginSchema = {
+    tags: ['Authentication'],
     body: {
       type: 'object',
       required: ['email', 'password'],
@@ -17,6 +18,7 @@ module.exports = async function(fastify) {
   };
 
   const meSchema = {
+    tags: ['Authentication'],
     headers: {
       type: 'object',
       required: ['authorization'],
