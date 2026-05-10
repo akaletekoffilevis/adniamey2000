@@ -6,11 +6,11 @@ Site web multilingue (FR/EN/HA/IT) de l'Église Assemblées de Dieu d'AD Niamey 
 
 ```
 adniamey2000site/
-├── frontend/          # Site vitrine SPA (HTML/CSS/JS vanilla + i18n)
-│   ├── index.html     # Page d'accueil (et pages par route)
-│   ├── css/style.css  # Styles complets
+├── frontend/          # Site statique HTML/CSS/JS vanilla + i18n
+│   ├── index.html     # Page d'accueil
+│   ├── css/           # Styles complets
 │   ├── js/
-│   │   ├── script.js  # Interactions, thème, audio, galerie, hash routing
+│   │   ├── dynamic.js # Script principal (i18n, thème, galerie, formulaires)
 │   │   ├── i18n.js    # Système de traduction (data-i18n)
 │   │   ├── api.js     # Client API REST (cache localStorage)
 │   │   └── service-worker.js  # PWA cache
@@ -22,19 +22,16 @@ adniamey2000site/
 ├── admin/             # Interface d'administration (HTML statique + API)
 │   ├── login.html     # Connexion admin (JWT via backend)
 │   ├── index.html     # Dashboard
-│   ├── sermons.html
-│   ├── blog.html
 │   ├── evenements.html
 │   └── galerie.html
-├── backend/           # API REST (Node.js + Express + SQLite)
+├── backend/           # API REST (Node.js + Fastify + SQLite)
 │   └── src/
 │       ├── index.js
 │       ├── db/        # Schema + seed
-│       ├── routes/    # sermons, articles, events, gallery, auth
+│       ├── routes/    # events, gallery, site, auth
 │       └── middleware/ # JWT auth
-├── 404.html           # Page 404 personnalisée (racine)
+├── 404.html           # Redirection vers frontend/404.html (GitHub Pages)
 ├── robots.txt
-├── sitemap.xml
 └── favicon.svg
 ```
 
@@ -44,7 +41,7 @@ adniamey2000site/
 |--------|------------|
 | **Frontend** | HTML5 + CSS3 + JavaScript vanilla (pas de framework) |
 | **i18n** | Système data-i18n avec fichiers JSON |
-| **Backend** | Node.js + Express + better-sqlite3 |
+| **Backend** | Node.js + Fastify + better-sqlite3 |
 | **Base de données** | SQLite (`backend/database/adniamey.db`) |
 | **Auth** | JWT (jsonwebtoken + bcryptjs) |
 | **Langues** | FR / EN / HA / IT |
@@ -75,10 +72,6 @@ npx serve .
 
 | Méthode | Route | Description |
 |---------|-------|-------------|
-| GET | `/api/sermons` | Liste des sermons |
-| GET | `/api/sermons/:id` | Détail d'un sermon |
-| GET | `/api/articles` | Liste des articles |
-| GET | `/api/articles/:id` | Détail d'un article |
 | GET | `/api/events` | Liste des événements |
 | GET | `/api/events/:id` | Détail d'un événement |
 | GET | `/api/gallery` | Galerie photos |
@@ -88,10 +81,7 @@ npx serve .
 
 - **Multilingue** : FR/EN/HA/IT avec bascule en direct (sans rechargement)
 - **Thème clair/sombre** : avec persistance localStorage + détection système
-- **Lecteur audio** : pour les sermons
 - **Lightbox** : pour la galerie photos
-- **Vidéos YouTube** : intégration avec lecteur modal
-- **Hash routing** : pages détail articles via `#/article/:id`
 - **Admin** : panneau de gestion avec authentification JWT
 - **PWA** : service worker avec cache offline
 - **SEO** : meta tags, Open Graph, JSON-LD, sitemap, robots.txt
