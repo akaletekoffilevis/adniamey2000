@@ -9,9 +9,7 @@ const PORT = process.env.PORT || 3001;
 const allowedOrigins = process.env.CORS_ORIGIN ? process.env.CORS_ORIGIN.split(',') : true;
 app.register(require('@fastify/cors'), { origin: allowedOrigins });
 app.register(require('@fastify/static'), { root: path.join(__dirname, '..', '..', 'frontend'), prefix: '/' });
-app.register(require('@fastify/static'), { root: path.join(__dirname, '..', 'uploads'), prefix: '/uploads/', decorateReply: false });
 app.register(require('@fastify/rate-limit'), { global: true, max: 100, timeWindow: '1 minute', keyGenerator: req => req.ip });
-app.register(require('@fastify/multipart'), { limits: { fileSize: 100 * 1024 * 1024 } });
 app.register(require('@fastify/swagger'), {
   openapi: {
     info: { title: 'AD Niamey 2000 API', description: 'API REST du site officiel de l\'Église AD Niamey 2000', version: '1.0.0' },
