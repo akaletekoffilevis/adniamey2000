@@ -1,0 +1,74 @@
+/* ===== AD Niamey 2000 - Gallery Page ===== */
+
+const PageGallery = (() => {
+  function init() {
+    loadGallery();
+    initTabs();
+    initFilters();
+  }
+
+  function loadGallery(category) {
+    const grid = document.querySelector('[data-content="gallery-grid"]');
+    if (!grid) return;
+
+    grid.innerHTML = '';
+
+    ApiClient.getGallery()
+      .then(items => {
+        if (!items || items.length === 0) {
+          grid.innerHTML = '<div class="empty-state"><p>' + LanguageEngine.t('empty_gallery') + '</p></div>';
+          return;
+        }
+        const filtered = category ? items.filter(i => i.category === category) : items;
+        if (filtered.length === 0) {
+          grid.innerHTML = '<div class="empty-state"><p>' + LanguageEngine.t('empty_gallery') + '</p></div>';
+          return;
+        }
+        grid.innerHTML = filtered.map(item => {
+          const l = CoreUtils.lang();
+          const label = item['caption_' + l] || item.caption_fr || '';
+          const bg = CoreUtils.gradients(item.gradient);
+          return '<div class="gallery-item anim-hidden" data-category="' + CoreUtils.esc(item.category) + '" style="background:' + bg + '">' +
+            '<div class="gallery-pattern"></div>' +
+            '<div class="gallery-overlay"><span>' + CoreUtils.esc(label) + '</span></div>' +
+            '</div>';
+        }).join('');
+      })
+      .catch(() => {
+        grid.innerHTML = '<div class="empty-state"><p>' + LanguageEngine.t('error_network') + '</p></div>';
+      });
+  }
+
+  function initTabs() {
+    document.querySelectorAll('.tab-btn').forEach(btn => {
+      btn.addEventListener('click', function () {
+        document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+        this.classList.add('active');
+        document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+        const target = document.getElementById(this.getAttribute('data-tab'));
+        if (target) target.classList.add('active');
+      });
+    });
+  }
+
+  function initFilters() {
+    document.querySelectorAll('[data-filter]').forEach(btn => {
+      btn.addEventListener('click', function () {
+        const parent = this.closest('.filter-group') || this.parentElement;
+        parent.querySelectorAll('[data-filter]').forEach(b => b.classList.remove('active'));
+        this.classList.add('active');
+        const category = this.getAttribute('data-filter');
+        loadGallery(category === 'all' ? null : category);
+      });
+    });
+  }
+
+  document.addEventListener('languageChanged', () => loadGallery());
+  document.addEventListener('dataChanged', (e) => {
+    if (!e.detail || e.detail.type === 'gallery') loadGallery();
+  });
+
+  return { init };
+})();
+
+window.PageGallery = PageGallery;

@@ -6,12 +6,13 @@
     "dev": "node --watch --env-file .env src/index.js",
     "start": "node --env-file .env src/index.js",
     "seed": "node --env-file .env src/db/seed.js",
-    "build:css": "csso public/css/style.css --output public/css/style.min.css",
-    "build:js": "terser public/js/i18n.js -o public/js/i18n.min.js && terser public/js/api.js -o public/js/api.min.js && terser public/js/script.js -o public/js/script.min.js && terser public/js/dynamic.js -o public/js/dynamic.min.js",
+    "build:css": "cat public/css/base.css public/css/layout.css public/css/components.css public/css/pages.css public/css/responsive.css > public/css/style.concat.css && csso public/css/style.concat.css --output public/css/style.min.css",
+    "build:js": "terser public/js/i18n/translations.js -o public/js/i18n.min.js && terser public/js/core/utils.js -o public/js/utils.min.js && terser public/js/core/storage.js -o public/js/storage.min.js && terser public/js/core/api.js -o public/js/api.min.js && terser public/js/core/router.js -o public/js/router.min.js && terser public/js/ui/navbar.js -o public/js/navbar.min.js && terser public/js/ui/cookie.js -o public/js/cookie.min.js && terser public/js/ui/lightbox.js -o public/js/lightbox.min.js && terser public/js/ui/media.js -o public/js/media.min.js && terser public/js/i18n/language.js -o public/js/language.min.js && terser public/js/pages/home.js -o public/js/home.min.js && terser public/js/pages/events.js -o public/js/events.min.js && terser public/js/pages/gallery.js -o public/js/gallery.min.js && terser public/js/pages/contact.js -o public/js/contact.min.js && terser public/js/pages/pastors.js -o public/js/pastors.min.js && terser public/js/app.js -o public/js/app.min.js",
     "build": "npm run build:css && npm run build:js"
   },
   "dependencies": {
     "@fastify/cors": "^11.0.1",
+    "@fastify/multipart": "^10.0.0",
     "@fastify/rate-limit": "^10.3.0",
     "@fastify/static": "^9.1.3",
     "@fastify/swagger": "^9.7.0",

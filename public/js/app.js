@@ -1,0 +1,65 @@
+/* ===== AD Niamey 2000 - Main Application Entry ===== */
+
+const AdApp = (() => {
+  const COMPONENTS = [
+    { src: 'components/navbar.html', selector: '[data-component="navbar"]' },
+    { src: 'components/footer.html', selector: '[data-component="footer"]' },
+    { src: 'components/cookie.html', selector: '[data-component="cookie"]' },
+    { src: 'components/lightbox.html', selector: '[data-component="lightbox"]' },
+  ];
+
+  function init() {
+    loadAllComponents().then(() => {
+      LanguageEngine.init();
+      NavbarUI.init();
+      CookieUI.init();
+      LightboxUI.init();
+      MediaUI.init();
+      initPageModule();
+      registerSW();
+    });
+  }
+
+  function registerSW() {
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/sw.js').catch(() => {});
+    }
+  }
+
+  function loadAllComponents() {
+    const promises = COMPONENTS.map(c =>
+      CoreUtils.loadComponent(c.src, c.selector).catch(() => {})
+    );
+    return Promise.all(promises);
+  }
+
+  function initPageModule() {
+    const body = document.body;
+    const page = body.getAttribute('data-page');
+    if (!page) return;
+
+    switch (page) {
+      case 'home':
+        if (window.PageHome) PageHome.init();
+        break;
+      case 'events':
+        if (window.PageEvents) PageEvents.init();
+        break;
+      case 'gallery':
+        if (window.PageGallery) PageGallery.init();
+        break;
+      case 'contact':
+        if (window.PageContact) PageContact.init();
+        break;
+      case 'pastors':
+        if (window.PagePastors) PagePastors.init();
+        break;
+    }
+  }
+
+  CoreUtils.ready(init);
+
+  return { init };
+})();
+
+window.AdApp = AdApp;
