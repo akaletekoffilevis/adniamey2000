@@ -1,0 +1,14 @@
+{
+  "name": "AD Niamey 2000 - Assemblées de Dieu au Niger",
+  "short_name": "AD Niamey 2000",
+  "description": "Église des Assemblées de Dieu à Niamey, Niger. Cultes, événements et ressources chrétiennes.",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#1e3a8a",
+  "icons": [
+    { "src": "favicon.svg", "sizes": "any", "type": "image/svg+xml" }
+  ],
+  "lang": "fr",
+  "categories": ["religion", "church", "christianity"]
+}

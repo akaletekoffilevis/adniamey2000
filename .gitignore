@@ -1,5 +1,6 @@
 *.md
 !README.md
+tuto.md
 node_modules/
 public/node_modules/
 database/*.db
