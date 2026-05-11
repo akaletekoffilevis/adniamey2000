@@ -5,83 +5,124 @@ Site web multilingue (FR/EN/HA/IT) de l'Église Assemblées de Dieu d'AD Niamey 
 ## Architecture
 
 ```
-adniamey2000site/
-├── frontend/          # Site statique HTML/CSS/JS vanilla + i18n
-│   ├── index.html     # Page d'accueil
-│   ├── css/           # Styles complets
+AdNiamey2000Site/
+├── public/                  # Frontend + Admin (HTML/CSS/JS vanilla + i18n)
+│   ├── index.html           # Page d'accueil
+│   ├── *.html               # Autres pages
+│   ├── admin/               # Interface d'administration
+│   │   ├── login.html       # Connexion (JWT via API)
+│   │   ├── index.html       # Dashboard
+│   │   ├── evenements.html  # Gestion événements
+│   │   ├── galerie.html     # Gestion galerie
+│   │   └── site.html        # Gestion site
+│   ├── css/
+│   │   ├── style.css        # Source
+│   │   └── style.min.css    # Minifiée
 │   ├── js/
-│   │   ├── dynamic.js # Script principal (i18n, thème, galerie, formulaires)
-│   │   ├── i18n.js    # Système de traduction (data-i18n)
-│   │   ├── api.js     # Client API REST (cache localStorage)
-│   │   └── service-worker.js  # PWA cache
-│   └── data/          # Fichiers de traduction JSON
-│       ├── fr.json
-│       ├── en.json
-│       ├── ha.json
-│       └── it.json
-├── admin/             # Interface d'administration (HTML statique + API)
-│   ├── login.html     # Connexion admin (JWT via backend)
-│   ├── index.html     # Dashboard
-│   ├── evenements.html
-│   └── galerie.html
-├── backend/           # API REST (Node.js + Fastify + SQLite)
-│   └── src/
-│       ├── index.js
-│       ├── db/        # Schema + seed
-│       ├── routes/    # events, gallery, site, auth
-│       └── middleware/ # JWT auth
-├── 404.html           # Redirection vers frontend/404.html (GitHub Pages)
-├── robots.txt
-└── favicon.svg
+│   │   ├── i18n.js          # Traduction (data-i18n)
+│   │   ├── api.js           # Client API REST
+│   │   ├── script.js        # Logique générale
+│   │   ├── dynamic.js       # Rendu contenu dynamique
+│   │   ├── service-worker.js # PWA cache
+│   │   └── *.min.js         # Minifiés
+│   └── data/                # Traductions
+│       ├── fr.js, en.js, ha.js, it.js
+├── src/                     # Backend (Node.js + Fastify)
+│   ├── index.js             # Point d'entrée
+│   ├── app.js               # Configuration app
+│   ├── config.js            # Config centrale
+│   ├── db/
+│   │   ├── schema.js        # Schéma SQLite
+│   │   └── seed.js          # Données initiales
+│   ├── middleware/
+│   │   └── auth.js          # JWT
+│   └── routes/
+│       ├── index.js         # Enregistrement routes
+│       ├── site.js          # GET /api/site
+│       ├── events.js        # CRUD événements
+│       ├── gallery.js       # CRUD galerie
+│       ├── contact.js       # Formulaires
+│       ├── auth.js          # Login
+│       └── admin.js         # Routes admin
+├── database/
+│   └── adniamey.db          # SQLite (généré)
+├── package.json
+├── .env.example             # Template variables d'env
+└── DEPLOIEMENT.md           # Guide complet
 ```
 
 ## Stack
 
 | Couche | Technologie |
 |--------|------------|
-| **Frontend** | HTML5 + CSS3 + JavaScript vanilla (pas de framework) |
-| **i18n** | Système data-i18n avec fichiers JSON |
-| **Backend** | Node.js + Fastify + better-sqlite3 |
-| **Base de données** | SQLite (`backend/database/adniamey.db`) |
-| **Auth** | JWT (jsonwebtoken + bcryptjs) |
+| **Frontend** | HTML5 + CSS3 + JavaScript vanilla |
+| **Serveur** | Node.js 20+ + Fastify 5+ |
+| **Base de données** | SQLite 3 (fichier local) |
+| **Auth** | JWT + bcryptjs |
+| **i18n** | Système data-i18n en JS |
 | **Langues** | FR / EN / HA / IT |
+| **Assets** | Minifiés (CSS/JS) |
 
-## Installation
+## Installation locale
 
-### 1. Backend
+### Démarrage rapide
 
 ```bash
-cd backend
+# 1. Dépendances
 npm install
-npm run seed    # Initialise la base avec des données fictives
-npm run dev     # Lance le serveur sur http://localhost:3001
+
+# 2. Générer la base de données
+npm run seed
+
+# 3. Build des assets (optionnel)
+npm run build
+
+# 4. Lancer en développement
+npm run dev      # http://localhost:3001
+
+# Ou production
+npm start        # http://localhost:3001
 ```
 
-### 2. Frontend
+### Accès
 
-Ouvrez `frontend/index.html` dans un navigateur, ou servez-le via :
-
-```bash
-cd frontend
-python3 -m http.server 8000
-# ou
-npx serve .
-```
+- **Site**: http://localhost:3001
+- **Admin**: http://localhost:3001/admin/login.html (après seed: user/user123)
+- **API**: http://localhost:3001/api/site
+- **Docs API**: http://localhost:3001/docs
 
 ## API Endpoints
 
-| Méthode | Route | Description |
-|---------|-------|-------------|
-| GET | `/api/events` | Liste des événements |
-| GET | `/api/events/:id` | Détail d'un événement |
-| GET | `/api/gallery` | Galerie photos |
-| POST | `/api/auth/login` | Authentification admin |
+| Méthode | Route | Auth | Description |
+|---------|-------|------|-------------|
+| GET | `/api/site` | ✗ | Tous les contenus du site |
+| GET | `/api/events` | ✗ | Liste des événements |
+| POST | `/api/events` | ✓ | Créer un événement |
+| PUT | `/api/events/:id` | ✓ | Modifier un événement |
+| DELETE | `/api/events/:id` | ✓ | Supprimer un événement |
+| GET | `/api/gallery` | ✗ | Galerie photos |
+| POST | `/api/gallery` | ✓ | Ajouter une photo |
+| POST | `/api/contact` | ✗ | Soumettre un message |
+| POST | `/api/prayer` | ✗ | Demande de prière |
+| POST | `/api/auth/login` | ✗ | Authentification admin |
 
 ## Fonctionnalités
 
-- **Multilingue** : FR/EN/HA/IT avec bascule en direct (sans rechargement)
-- **Lightbox** : pour la galerie photos
-- **Admin** : panneau de gestion avec authentification JWT
-- **PWA** : service worker avec cache offline
-- **SEO** : meta tags, Open Graph, JSON-LD, sitemap, robots.txt
-- **Cookies** : bannière de consentement
+- **Multilingue** : FR/EN/HA/IT, bascule instant sans rechargement
+- **Admin sécurisé** : Authentification JWT, édition en temps réel
+- **Galerie** : Lightbox, catégories filtrables
+- **Événements** : Liste, détails, statuts (à venir/passé)
+- **Formulaires** : Contact, demandes de prière
+- **PWA** : Service worker avec cache offline
+- **SEO** : Meta tags, Open Graph, JSON-LD, hreflang
+- **Responsive** : Optimisé mobile et desktop
+
+## Variables d'environnement (.env)
+
+```env
+PORT=3001
+JWT_SECRET=votre-secret-tres-fort-64-char-min
+CORS_ORIGIN=http://localhost:3001,https://adniamey2000.org
+```
+
+Voir `.env.example` pour le template complet.

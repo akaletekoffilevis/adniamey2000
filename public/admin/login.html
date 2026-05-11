@@ -38,7 +38,8 @@ document.getElementById('login-form').addEventListener('submit', function(e) {
   var email = document.getElementById('email').value;
   var pass = document.getElementById('password').value;
   var msg = document.getElementById('login-error');
-  fetch('http://localhost:3001/api/auth/login', {
+  var API = window.location.origin + '/api';
+  fetch(API + '/auth/login', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ email: email, password: pass })

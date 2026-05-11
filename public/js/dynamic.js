@@ -174,7 +174,7 @@
         historyContent.innerHTML = data.history.map(function(h) {
           var paragraphs = (tr(h, 'content') || '').split('\n').filter(function(p) { return p.trim(); });
           return '<div class="mb-8">' +
-            (h.section ? '<h3 style="font-family:\'Playfair Display\',serif;font-size:1.5rem;font-weight:700;color:var(--blue-900);margin-bottom:1rem">' + esc(h.section) + '</h3>' : '') +
+            (h.section ? '<h3 style="font-family:serif;font-size:1.5rem;font-weight:700;color:var(--blue-900);margin-bottom:1rem">' + esc(h.section) + '</h3>' : '') +
             paragraphs.map(function(p) { return '<p style="color:var(--gray-600);margin-bottom:1rem;line-height:1.7">' + esc(p) + '</p>'; }).join('') +
           '</div>';
         }).join('');
@@ -196,7 +196,7 @@
         ministriesGrid.innerHTML = data.ministries.map(function(m) {
           return '<div class="card-horaire" style="padding:2rem;text-align:center;background:var(--white);border-radius:1rem;box-shadow:var(--shadow-md)">' +
             '<div class="doctrine-icon" style="margin:0 auto 1rem"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21l-7-5-7 5V5a2 2 0 012-2h10a2 2 0 012 2v16z"/></svg></div>' +
-            '<h3 style="font-family:\'Playfair Display\',serif;font-size:1.125rem;font-weight:600;color:var(--blue-900);margin-bottom:.25rem">' + esc(tr(m, 'name')) + '</h3>' +
+            '<h3 style="font-family:serif;font-size:1.125rem;font-weight:600;color:var(--blue-900);margin-bottom:.25rem">' + esc(tr(m, 'name')) + '</h3>' +
             '<p style="font-size:.85rem;color:var(--gray-500);margin-bottom:1rem">' + esc(m.leader || '') + '</p>' +
             '<p style="font-size:.875rem;color:var(--gray-600)">' + esc(tr(m, 'description')) + '</p>' +
           '</div>';

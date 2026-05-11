@@ -935,7 +935,7 @@ ul { list-style: none; }
 
 /* ===== Events Calendar ===== */
 .calendar-nav { display:flex;align-items:center;justify-content:space-between;margin-bottom:2rem;flex-wrap:wrap;gap:1rem }
-.calendar-nav h2 { font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:700;color:var(--blue-900) }
+.calendar-nav h2 { font-family:serif;font-size:1.5rem;font-weight:700;color:var(--blue-900) }
 .calendar-nav button { background:var(--blue-100);border:none;width:2.5rem;height:2.5rem;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s }
 .calendar-nav button:hover { background:var(--blue-200) }
 .calendar-nav button svg { width:1.25rem;height:1.25rem;color:var(--blue-700) }
@@ -955,10 +955,10 @@ ul { list-style: none; }
 .event-card { display:flex;gap:1rem;padding:1.25rem;border-radius:.75rem;background:var(--gray-50);margin-bottom:1rem;align-items:flex-start }
 .event-card:last-child { margin-bottom:0 }
 .event-date-box { min-width:4rem;text-align:center;background:var(--blue-800);color:var(--white);border-radius:.75rem;padding:.75rem .5rem }
-.event-date-box .day { font-size:1.5rem;font-weight:700;line-height:1;font-family:'Playfair Display',serif }
+.event-date-box .day { font-size:1.5rem;font-weight:700;line-height:1;font-family:serif }
 .event-date-box .month { font-size:.7rem;text-transform:uppercase;letter-spacing:1px;margin-top:2px }
 .event-info { flex:1 }
-.event-info h3 { font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:600;color:var(--blue-900);margin-bottom:.25rem }
+.event-info h3 { font-family:serif;font-size:1.1rem;font-weight:600;color:var(--blue-900);margin-bottom:.25rem }
 .event-info .event-meta { font-size:.8rem;color:var(--gray-500);margin-bottom:.5rem;display:flex;gap:1rem;flex-wrap:wrap }
 .event-info .event-meta svg { width:1rem;height:1rem;vertical-align:middle;margin-right:3px }
 .event-info p { font-size:.85rem;color:var(--gray-600);line-height:1.5 }
@@ -981,7 +981,7 @@ ul { list-style: none; }
 .admin-sidebar { width:260px;background:var(--blue-950);color:var(--white);padding:1.5rem;flex-shrink:0;display:flex;flex-direction:column }
 .admin-sidebar .logo { display:flex;align-items:center;gap:.5rem;margin-bottom:2rem;padding-bottom:1rem;border-bottom:1px solid rgba(255,255,255,.1) }
 .admin-sidebar .logo svg { width:1.75rem;height:1.75rem;color:var(--blue-300) }
-.admin-sidebar .logo span { font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700 }
+.admin-sidebar .logo span { font-family:serif;font-size:1.1rem;font-weight:700 }
 .admin-nav { flex:1 }
 .admin-nav a { display:flex;align-items:center;gap:.75rem;padding:.75rem 1rem;border-radius:.75rem;color:rgba(255,255,255,.6);font-size:.85rem;font-weight:500;transition:all .2s;margin-bottom:2px }
 .admin-nav a:hover { background:rgba(255,255,255,.1);color:var(--white) }
@@ -994,13 +994,13 @@ ul { list-style: none; }
 
 .admin-main { flex:1;background:var(--gray-50);display:flex;flex-direction:column }
 .admin-header { background:var(--white);padding:1rem 2rem;display:flex;align-items:center;justify-content:space-between;box-shadow:var(--shadow-sm) }
-.admin-header h1 { font-family:'Playfair Display',serif;font-size:1.25rem;font-weight:600;color:var(--blue-900) }
+.admin-header h1 { font-family:serif;font-size:1.25rem;font-weight:600;color:var(--blue-900) }
 .admin-header .actions { display:flex;gap:.75rem;align-items:center }
 .admin-content { padding:2rem;flex:1 }
 
 .admin-stats { display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.5rem;margin-bottom:2rem }
 .admin-stat { background:var(--white);border-radius:1rem;padding:1.5rem;box-shadow:var(--shadow-sm);border:1px solid var(--gray-100) }
-.admin-stat .num { font-family:'Playfair Display',serif;font-size:2rem;font-weight:700;color:var(--blue-800) }
+.admin-stat .num { font-family:serif;font-size:2rem;font-weight:700;color:var(--blue-800) }
 .admin-stat .label { font-size:.85rem;color:var(--gray-500);margin-top:.25rem }
 .admin-stat .icon { width:2.5rem;height:2.5rem;border-radius:.75rem;display:flex;align-items:center;justify-content:center;margin-bottom:.75rem }
 .admin-stat .icon.blue { background:var(--blue-100);color:var(--blue-700) }
@@ -1025,7 +1025,7 @@ ul { list-style: none; }
 .admin-login-box { background:var(--white);border-radius:1.5rem;padding:2.5rem;width:100%;max-width:420px;box-shadow:var(--shadow-xl) }
 .admin-login-box .logo { text-align:center;margin-bottom:2rem }
 .admin-login-box .logo svg { width:3rem;height:3rem;color:var(--blue-800);margin:0 auto .75rem;display:block }
-.admin-login-box .logo h1 { font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:700;color:var(--blue-900) }
+.admin-login-box .logo h1 { font-family:serif;font-size:1.5rem;font-weight:700;color:var(--blue-900) }
 .admin-login-box .logo p { font-size:.85rem;color:var(--gray-500) }
 .admin-login-box .form-group { margin-bottom:1.25rem }
 .admin-login-box label { display:block;font-size:.85rem;font-weight:500;color:var(--gray-700);margin-bottom:.3rem }
@@ -1144,7 +1144,7 @@ ul { list-style: none; }
   margin: 0 auto 1.25rem;
 }
 .success-popup-icon svg { width: 2rem; height: 2rem; color: #065f46; }
-.success-popup-inner h3 { font-family: 'Playfair Display',serif; font-size: 1.25rem; font-weight: 700; color: var(--blue-900); margin-bottom: 0.5rem; }
+.success-popup-inner h3 { font-family: serif; font-size: 1.25rem; font-weight: 700; color: var(--blue-900); margin-bottom: 0.5rem; }
 .success-popup-inner p { color: var(--gray-500); font-size: 0.875rem; margin-bottom: 1.5rem; }
 .success-popup-btn {
   background: var(--blue-800);

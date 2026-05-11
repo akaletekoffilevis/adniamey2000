@@ -9,7 +9,7 @@ self.addEventListener('install', function(e) {
         '/contact.html', '/evenements.html', '/galerie.html',
         '/mentions-legales.html', '/pasteurs.html', '/politique-confidentialite.html',
         '/css/style.min.css', '/js/i18n.min.js', '/js/api.min.js',
-        '/js/script.min.js', '/data/fr.js', '/data/en.js', '/data/ha.js', '/data/it.js',
+        '/js/script.min.js', '/js/dynamic.min.js', '/data/fr.js', '/data/en.js', '/data/ha.js', '/data/it.js',
         '/favicon.svg', '/robots.txt'
       ]).catch(function(err) { console.warn('SW: cache addAll partial fail', err); });
     })

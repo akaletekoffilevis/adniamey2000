@@ -1,7 +1,7 @@
 (function() {
   'use strict';
 
-  var API_URL = 'http://localhost:3001/api';
+  var API_URL = window.location.origin + '/api';
 
   async function fetchJSON(endpoint) {
     var res = await fetch(API_URL + endpoint);

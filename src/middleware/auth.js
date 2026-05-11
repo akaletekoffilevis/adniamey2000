@@ -1,5 +1,6 @@
 const jwt = require('jsonwebtoken');
-const SECRET = process.env.JWT_SECRET || 'adniamey2000-secret-key-change-in-production';
+const config = require('../config');
+const SECRET = config.JWT_SECRET;
 
 function generateToken(user) {
   return jwt.sign({ id: user.id, email: user.email, role: user.role }, SECRET, { expiresIn: '7d' });

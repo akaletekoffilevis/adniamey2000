@@ -12,7 +12,7 @@ function buildApp(opts = {}) {
 
   // Plugins
   app.register(require('@fastify/cors'), { origin: config.CORS_ORIGIN });
-  app.register(require('@fastify/static'), { root: config.FRONTEND_PATH, prefix: '/' });
+  app.register(require('@fastify/static'), { root: config.FRONTEND_PATH, prefix: '/', list: false });
   app.register(require('@fastify/rate-limit'), {
     global: true,
     max: config.RATE_LIMIT.max,
@@ -49,7 +49,7 @@ function buildApp(opts = {}) {
 
   // Socket.IO
   const httpServer = app.server;
-  const io = new Server(httpServer, { cors: { origin: true } });
+  const io = new Server(httpServer, { cors: { origin: config.CORS_ORIGIN } });
   app.decorate('io', io);
 
   io.on('connection', (socket) => {

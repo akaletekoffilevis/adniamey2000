@@ -238,7 +238,7 @@
           data[inp.name] = inp.value;
         });
         if (typeof window.api !== 'undefined' && window.api.API_URL) {
-          var apiUrl = window.api.API_URL || 'http://localhost:3001/api';
+          var apiUrl = window.api.API_URL;
           fetch(apiUrl + endpoint, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
@@ -257,8 +257,7 @@
             submitBtn.disabled = false;
             if (btnText) btnText.style.display = '';
             if (btnSpinner) btnSpinner.style.display = 'none';
-            form.reset();
-            document.getElementById('success-popup').classList.add('show');
+            showFormError(form, 'Erreur réseau. Veuillez réessayer.');
           });
         } else {
           setTimeout(function() {

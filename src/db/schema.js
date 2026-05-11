@@ -13,15 +13,18 @@ function initDB(dbPath) {
   db.exec(`
     CREATE TABLE IF NOT EXISTS events (
       id INTEGER PRIMARY KEY AUTOINCREMENT,
-      title_fr TEXT NOT NULL,
-      title_en TEXT NOT NULL,
-      title_ha TEXT NOT NULL,
-      description_fr TEXT NOT NULL,
-      description_en TEXT NOT NULL,
-      description_ha TEXT NOT NULL,
-      location_fr TEXT NOT NULL,
-      location_en TEXT NOT NULL,
-      location_ha TEXT NOT NULL,
+      title_fr TEXT NOT NULL DEFAULT '',
+      title_en TEXT NOT NULL DEFAULT '',
+      title_ha TEXT NOT NULL DEFAULT '',
+      title_it TEXT NOT NULL DEFAULT '',
+      description_fr TEXT NOT NULL DEFAULT '',
+      description_en TEXT NOT NULL DEFAULT '',
+      description_ha TEXT NOT NULL DEFAULT '',
+      description_it TEXT NOT NULL DEFAULT '',
+      location_fr TEXT NOT NULL DEFAULT '',
+      location_en TEXT NOT NULL DEFAULT '',
+      location_ha TEXT NOT NULL DEFAULT '',
+      location_it TEXT NOT NULL DEFAULT '',
       date TEXT NOT NULL,
       status TEXT NOT NULL DEFAULT 'upcoming',
       created_at TEXT DEFAULT (datetime('now'))
@@ -29,9 +32,10 @@ function initDB(dbPath) {
 
     CREATE TABLE IF NOT EXISTS gallery (
       id INTEGER PRIMARY KEY AUTOINCREMENT,
-      caption_fr TEXT NOT NULL,
-      caption_en TEXT NOT NULL,
-      caption_ha TEXT NOT NULL,
+      caption_fr TEXT NOT NULL DEFAULT '',
+      caption_en TEXT NOT NULL DEFAULT '',
+      caption_ha TEXT NOT NULL DEFAULT '',
+      caption_it TEXT NOT NULL DEFAULT '',
       category TEXT NOT NULL,
       gradient TEXT NOT NULL,
       date TEXT NOT NULL,
@@ -56,6 +60,7 @@ function initDB(dbPath) {
       name TEXT NOT NULL,
       email TEXT NOT NULL,
       phone TEXT,
+      subject TEXT DEFAULT '',
       message TEXT NOT NULL,
       created_at TEXT DEFAULT (datetime('now'))
     );
@@ -179,6 +184,14 @@ function initDB(dbPath) {
 
     INSERT OR IGNORE INTO cache_version (id, version) VALUES (1, 1);
   `);
+
+  // Migrations for existing databases
+  try { db.exec("ALTER TABLE events ADD COLUMN title_it TEXT DEFAULT ''"); } catch(e) {}
+  try { db.exec("ALTER TABLE events ADD COLUMN description_it TEXT DEFAULT ''"); } catch(e) {}
+  try { db.exec("ALTER TABLE events ADD COLUMN location_it TEXT DEFAULT ''"); } catch(e) {}
+  try { db.exec("ALTER TABLE gallery ADD COLUMN caption_it TEXT DEFAULT ''"); } catch(e) {}
+  try { db.exec("ALTER TABLE contact_messages ADD COLUMN subject TEXT DEFAULT ''"); } catch(e) {}
+
   return db;
 }
 

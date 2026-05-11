@@ -1,13 +1,18 @@
 const { authMiddleware } = require('../middleware/auth');
 const { fillAllLangs } = require('../utils/translate');
 
-function createCRUD(fastify, { route, table, columns, idColumns, useFillLangs }) {
+const VALID_TABLES = new Set([
+  'testimonials', 'schedules', 'ministries', 'doctrine', 'history_blocks',
+  'site_stats', 'contact_details', 'social_links', 'donation_methods'
+]);
+
+function createCRUD(fastify, { route, table, columns, useFillLangs }) {
+  if (!VALID_TABLES.has(table)) throw new Error('Invalid table: ' + table);
   const { db, io } = fastify;
 
   const cols = columns.join(', ');
   const placeholders = columns.map((c) => '@' + c).join(', ');
   const setClause = columns.map((c) => c + '=@' + c).join(', ');
-  const idCols = idColumns || columns;
 
   function bumpVersion() {
     db.prepare('UPDATE cache_version SET version = version + 1 WHERE id = 1').run();
@@ -58,13 +63,6 @@ function createCRUD(fastify, { route, table, columns, idColumns, useFillLangs })
 
 module.exports = async function (fastify) {
   const { db, io } = fastify;
-
-  function bumpVersion() {
-    db.prepare('UPDATE cache_version SET version = version + 1 WHERE id = 1').run();
-    const v = db.prepare('SELECT version FROM cache_version WHERE id = 1').get();
-    io.emit('site:updated', { version: v.version });
-    return v.version;
-  }
 
   // SETTINGS (custom handler, different from CRUD)
   fastify.put('/api/admin/settings', { preHandler: [authMiddleware], schema: { tags: ['Admin'] } }, async (req, reply) => {
